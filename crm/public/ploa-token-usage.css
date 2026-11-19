@@ -1,0 +1,35 @@
+.ploa-token-usage { min-width:0; background:#081521; }
+.ploa-token-controls { display:flex; flex-wrap:wrap; gap:16px 26px; margin:18px 0; }
+.ploa-token-filter { display:grid; gap:7px; min-width:0; }
+.ploa-token-filter>span { color:#b6c8d9; font-size:.8rem; }
+.ploa-token-options { display:flex; flex-wrap:wrap; gap:6px; }
+.ploa-token-options .button { min-height:38px; padding:8px 13px; font-size:.82rem; }
+.ploa-token-options .button[aria-pressed="true"] { background:#183853; color:#edf5ff; border-color:#78baff; }
+.ploa-token-stats { display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:16px; margin:20px 0 12px; }
+.ploa-token-stats>div { min-width:0; }
+.ploa-token-stats dt { color:#b1c3d5; font-size:.82rem; }
+.ploa-token-stats dd { margin:7px 0 0; font-size:clamp(1.25rem,2.3vw,1.8rem); font-weight:650; color:#dcecff; overflow-wrap:anywhere; line-height:1.35; font-variant-numeric:tabular-nums; }
+.ploa-token-stats>div:first-child dd { color:#91c6ff; }
+.ploa-token-stats dd.ploa-token-ratio { font-size:clamp(1.1rem,1.8vw,1.5rem); }
+.ploa-token-quota { color:#bfd7ed; font-size:.8rem; line-height:1.6; margin:12px 0 0; }
+.ploa-token-coverage { margin:16px 0 0; color:#aebfce; font-size:.8rem; line-height:1.65; max-width:90ch; }
+.ploa-token-graph { height:68px; display:flex; align-items:end; gap:5px; margin:20px 0 0; }
+.ploa-token-graph[hidden] { display:none; }
+.ploa-token-bar { display:block; height:var(--token-height); flex:1; min-width:0; background:#69aaf1; border-radius:3px 3px 0 0; }
+.ploa-token-bar[data-empty="true"] { background:transparent; }
+.ploa-token-range { display:flex; justify-content:space-between; gap:10px; margin-top:8px; font-size:.72rem; color:#9fb4c8; }
+.ploa-token-range[hidden] { display:none; }
+.ploa-token-compact { margin:0; padding:18px 22px; border-radius:14px; border:1px solid #29435b; }
+.ploa-token-compact .ploa-token-stats { margin-top:15px; }
+.ploa-token-compact .ploa-token-coverage { font-size:.75rem; }
+.ploa-model-routing { margin-top:24px; min-width:0; }
+.ploa-model-routing h4 { margin:0 0 10px; }
+.ploa-model-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin-top:16px; }
+.ploa-model-grid[hidden] { display:none; }
+.ploa-model-card { display:flex; flex-direction:column; gap:9px; padding:16px; min-width:0; background:#091b2c; border:1px solid #29465f; border-radius:12px; }
+.ploa-model-card strong { color:#edf5ff; font-size:.95rem; overflow-wrap:anywhere; }
+.ploa-model-card .ploa-note { margin:0; line-height:1.5; }
+.ploa-model-card[data-status="paused"] { border-color:#6c638c; }
+.ploa-model-tokens { font-size:1.08rem; color:#9bceff; font-variant-numeric:tabular-nums; overflow-wrap:anywhere; }
+@media(max-width:800px) { .ploa-model-grid { grid-template-columns:1fr; } }
+@media(max-width:600px) { .ploa-token-controls { flex-direction:column; gap:14px; } .ploa-token-stats { gap:12px; grid-template-columns:repeat(2,minmax(0,1fr)); } .ploa-token-stats>div:first-child { grid-column:1/-1; } .ploa-token-stats dt { font-size:.75rem; } .ploa-token-stats dd { font-size:1.2rem; } .ploa-token-compact { padding:18px; } }

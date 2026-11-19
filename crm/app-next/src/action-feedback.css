@@ -1,0 +1,9 @@
+/* Reserve room below the actual button, including when actions wrap on mobile. */
+button.ploa-has-feedback{position:relative!important;overflow:visible!important}
+:is(.ploa-actions,.process-actions,.copy-form-actions,.copy-card-actions,.settings-footer,.account-actions):has(>button.ploa-has-feedback){align-items:flex-start!important}
+.ploa-action-success{
+ position:absolute;top:100%;left:0;display:block;box-sizing:border-box;
+ width:100%;min-width:0;max-width:100%;margin:6px 0 0;
+ color:#a7d9c3;font-size:.8rem;font-weight:500;line-height:1.5;
+ text-align:center;overflow-wrap:anywhere;pointer-events:none;
+}

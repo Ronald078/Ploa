@@ -1,0 +1,11 @@
+{
+  "name": "ploa-contas",
+  "account_id": "b1a340207c81cb5b26308d0233f8f697",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-11-14",
+  "compatibility_flags": ["nodejs_compat", "enable_nodejs_http_server_modules"],
+  "workers_dev": true,
+  "assets": {"directory": "../../output/cloud-worker-assets", "binding": "ASSETS", "run_worker_first": true, "html_handling": "none"},
+  "rules": [{"type": "Data", "globs": ["**/*.png"], "fallthrough": true}],
+  "observability": {"enabled": false}
+}

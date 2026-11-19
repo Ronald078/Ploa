@@ -1,0 +1,60 @@
+.ploa-mobile-diagnostic{color-scheme:dark;--black:#050505;--navy:#0b1c2c;--surface:#0a141f;--border:#2c465d;--ink:#ecf4fd;--muted:#b3c5d6;--blue:#9bcaff;--green:#78d5ae;--amber:#e5c783;--red:#f3a1a8}
+.ploa-mobile-diagnostic *{box-sizing:border-box}
+body.mobile-access-page{margin:0;background:#050505;color:#ecf4fd;font:16px/1.6 'Segoe UI',Arial,sans-serif}
+.ploa-mobile-diagnostic{width:min(100% - 48px,960px);margin:auto;padding-bottom:40px}
+.ploa-mobile-diagnostic header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:28px 0}
+.ploa-mobile-diagnostic a{color:var(--blue);text-underline-offset:4px}
+.ploa-mobile-diagnostic .brand{display:flex;gap:12px;align-items:center;text-decoration:none;color:var(--ink);font-weight:700;font-size:1.2rem}
+.ploa-mobile-diagnostic .brand img{width:42px;height:42px;object-fit:contain}
+.ploa-mobile-diagnostic .back{font-size:.9rem}
+.ploa-mobile-diagnostic .intro{padding:28px 0 34px}
+.ploa-mobile-diagnostic .intro h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.15;letter-spacing:-.04em;margin:0;max-width:700px}
+.ploa-mobile-diagnostic .intro p{max-width:630px;margin:18px 0 0;color:var(--muted)}
+.ploa-mobile-diagnostic h2{font-size:1.15rem;margin:0}
+.ploa-mobile-diagnostic p{margin:8px 0;color:var(--muted)}
+.ploa-mobile-diagnostic .address{background:linear-gradient(120deg,#132d45,var(--navy));border:1px solid #456b8b;border-radius:18px;padding:28px;display:grid;gap:16px}
+.ploa-mobile-diagnostic .address p{margin:6px 0 0}
+.ploa-mobile-diagnostic .address>a{font-size:clamp(1rem,3vw,1.35rem);line-height:1.5;overflow-wrap:anywhere}
+.ploa-mobile-diagnostic .actions{display:flex;flex-wrap:wrap;gap:12px}
+.ploa-mobile-diagnostic button{font:600 .95rem/1.4 'Segoe UI',Arial,sans-serif;padding:12px 18px;min-height:46px;border:1px solid transparent;border-radius:10px;background:var(--blue);color:#07121e;cursor:pointer}
+.ploa-mobile-diagnostic .secondary{background:#0b1c2c;color:var(--ink);border-color:#4e708c}
+.ploa-mobile-diagnostic button:disabled{opacity:.55;cursor:wait}
+.ploa-mobile-diagnostic button:focus-visible,.ploa-mobile-diagnostic a:focus-visible,.ploa-mobile-diagnostic summary:focus-visible{outline:3px solid var(--blue);outline-offset:4px}
+.ploa-mobile-diagnostic #feedback{font-size:.9rem;min-height:1.6em}
+.ploa-mobile-diagnostic .diagnostic{padding:36px 0}
+.ploa-mobile-diagnostic .section-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.ploa-mobile-diagnostic .section-heading span{color:var(--muted);font-size:.83rem}
+.ploa-mobile-diagnostic #browser-status{max-width:750px;font-size:.9rem;margin:10px 0 20px}
+.ploa-mobile-diagnostic #checks{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.ploa-mobile-diagnostic #checks li{display:grid;grid-template-columns:10px minmax(0,1fr) auto;gap:16px;align-items:start;padding:18px 20px;background:var(--surface);border:1px solid #213748;border-radius:12px}
+.ploa-mobile-diagnostic #checks strong{font-size:.95rem}
+.ploa-mobile-diagnostic #checks p{font-size:.88rem;margin:4px 0 0;line-height:1.6}
+.ploa-mobile-diagnostic .indicator{width:8px;height:8px;margin-top:9px;border-radius:50%;background:var(--amber)}
+.ploa-mobile-diagnostic .ok .indicator{background:var(--green)}
+.ploa-mobile-diagnostic .error .indicator{background:var(--red)}
+.ploa-mobile-diagnostic .result{font-size:.78rem;line-height:1.5;padding:3px 8px;background:#142b3e;border-radius:6px;color:var(--muted)}
+.ploa-mobile-diagnostic .ok .result{color:var(--green)}
+.ploa-mobile-diagnostic .error .result{color:var(--red)}
+.ploa-mobile-diagnostic #phones{font-size:.85rem;margin-top:16px}
+.ploa-mobile-diagnostic .help{border-top:1px solid var(--border);padding-top:26px}
+.ploa-mobile-diagnostic .help h2{margin-bottom:18px}
+.ploa-mobile-diagnostic details{padding:16px 0}
+.ploa-mobile-diagnostic summary{cursor:pointer;font-weight:600;color:var(--ink);padding:4px 0}
+.ploa-mobile-diagnostic details p,.ploa-mobile-diagnostic details li{color:var(--muted);font-size:.93rem}
+.ploa-mobile-diagnostic ol{padding-left:23px}
+.ploa-mobile-diagnostic li+li{margin-top:8px}
+.ploa-mobile-diagnostic .scope{font-size:.85rem;max-width:700px;margin-top:20px}
+.ploa-mobile-diagnostic footer{display:flex;flex-wrap:wrap;gap:24px;padding-top:24px;font-size:.85rem}
+@media(max-width:600px){.ploa-mobile-diagnostic{width:calc(100% - 32px)}
+.ploa-mobile-diagnostic header{padding:20px 0}
+.ploa-mobile-diagnostic .intro{padding:20px 0 26px}
+.ploa-mobile-diagnostic .address{padding:22px 18px}
+.ploa-mobile-diagnostic .actions{display:grid;grid-template-columns:1fr;width:100%}
+.ploa-mobile-diagnostic #checks li{padding:16px 14px;gap:12px;grid-template-columns:8px minmax(0,1fr)}
+.ploa-mobile-diagnostic .result{grid-column:2;justify-self:start}
+.ploa-mobile-diagnostic .back{font-size:.8rem}
+.ploa-mobile-diagnostic .brand{font-size:1.05rem}}
+@media(prefers-reduced-motion:no-preference){.ploa-mobile-diagnostic{animation:ploaMobileDiagnosticEnter .32s ease-out both}
+@keyframes ploaMobileDiagnosticEnter{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}}
+
+.ploa-mobile-diagnostic{font:16px/1.6 'Segoe UI',Arial,sans-serif;color:var(--ink)}

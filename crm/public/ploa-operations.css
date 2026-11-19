@@ -1,0 +1,55 @@
+/* Operação organizada: usa as mesmas cores e tipografia do Ploa. */
+.ploa-base-strip { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; margin: 16px 0; }
+.ploa-base-item { display: grid; align-content: start; gap: 7px; min-width: 0; padding: 18px; border: 1px solid #29435b; border-radius: 12px; background: linear-gradient(145deg,#0b2032,#07111b); }
+.ploa-base-item > span { color: #b9cddd; font-size: .83rem; }
+.ploa-base-item > strong { font-size: 1.65rem; color: #f0f6fd; line-height: 1.2; font-variant-numeric: tabular-nums; }
+.ploa-base-item > small { color: #b5c4d2; font-size: .75rem; line-height: 1.5; overflow-wrap: anywhere; }
+.ploa-base-item > .ploa-source-date { color: #8ea9bf; font-size: .7rem; }
+.ploa-triage-panel { margin: 18px 0; }
+.lead-queues { grid-template-columns: repeat(auto-fit,minmax(145px,1fr)); }
+.ploa-triage-progress { width: 100%; height: 8px; accent-color: #8bc7ff; margin: 18px 0 6px; }
+.ploa-triage-preview { display: grid; gap: 12px; max-height: 540px; overflow-y: auto; overscroll-behavior: contain; margin-top: 18px; padding-right: 4px; }
+.ploa-triage-item { min-width: 0; padding: 16px; border: 1px solid #29435b; border-radius: 10px; background: #07121d; }
+.ploa-triage-item-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+.ploa-triage-item-head strong { color: #edf5fc; overflow-wrap: anywhere; }
+.ploa-triage-item p { margin: 12px 0 8px; color: #cfdeeb; font-size: .87rem; line-height: 1.6; }
+.ploa-triage-item > small { color: #9bb4c9; font-size: .76rem; }
+.ploa-triage-item .ploa-actions { margin-top: 14px; }
+@media (max-width: 760px) { .ploa-base-strip { grid-template-columns: minmax(0,1fr); } }
+
+/* Páginas próprias para IA e copys, com a execução diretamente em Mensagens. */
+.ploa-operation-body { display: grid; grid-template-columns: minmax(0,1fr); align-content: start; gap: 18px; min-width: 0; }
+.ploa-operation-body > * { min-width: 0; max-width: 100%; margin-block: 0; }
+.ploa-operation-body .copy-editor-panel { grid-column: auto; }
+.ploa-operation-status { margin: -4px 0 20px; color: #b9d3ea; font-size: .85rem; line-height: 1.6; }
+.ploa-operation-fold-body { padding-top: 20px; }
+.ploa-operation-fold-body > .ploa-section { margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+.ploa-operation-fold > summary { min-height: 28px; }
+.ploa-message-qr:empty, .ploa-message-qr:has(> [hidden]) { display: none; }
+.ploa-message-qr > * { margin: 0; }
+[data-view-panel="messages"] > .page-intro, [data-view-panel="leads"] > .page-intro { flex-wrap: wrap; gap: 14px; }
+[data-view-panel="copies"] .copy-editor-panel { margin: 0; }
+[data-view-panel="leads"] .lead-queues { grid-template-columns: repeat(4,minmax(0,1fr)); }
+@media (max-width: 860px) { [data-view-panel="leads"] .lead-queues { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (max-width: 480px) { [data-view-panel="leads"] > .page-intro > .text-action { margin-top: 4px; } }
+
+/* Acabamento: separação por espaço, sem riscos decorativos entre os blocos. */
+.topbar, .page-intro { border-bottom: 0; box-shadow: none; }
+.page-intro::before, .page-intro::after,
+.response-visual::before, .response-visual::after { content: none; display: none; }
+.ploa-operation-status { margin: 0 0 22px; padding: 0; border: 0; line-height: 1.5; }
+.ploa-finance-filters { align-items: start; gap: 18px 16px; margin: 24px 0 20px; padding: 0; border: 0; }
+.ploa-finance-filters > label { min-width: 0; display: grid; align-content: start; gap: 10px; line-height: 1.45; }
+.ploa-finance-filters > label > span { display: block; padding: 0; color: #c5d3e0; font-size: .82rem; }
+.ploa-finance-filters .ploa-select-shell { margin: 0; }
+.ploa-finance-filters > p { margin-top: 0; line-height: 1.6; }
+.response-ring { width: 100%; height: 100%; }
+.response-ring-copy { inset: 0; width: auto; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 6px; padding: 28px; }
+.response-ring-copy strong { display: block; margin: 0; font-size: clamp(1.8rem,2.5vw,2.25rem); line-height: 1.1; white-space: nowrap; }
+.response-ring-copy > span { max-width: none; font-size: .8rem; line-height: 1.25; color: #c0d0df; white-space: nowrap; }
+.ploa-toolbar > label { align-content: start; }
+.ploa-actions { row-gap: 12px; }
+button.ploa-has-feedback { position:relative!important;overflow:visible!important; }
+:is(.ploa-actions,.process-actions,.dialog-actions,.settings-footer):has(>button.ploa-has-feedback) { align-items:flex-start!important; }
+.ploa-action-success { position:absolute;top:100%;left:0;display:block;box-sizing:border-box;width:100%;min-width:0;max-width:100%;margin:6px 0 0;color:#a7d9c3;font-size:.8rem;font-weight:500;line-height:1.5;text-align:center;overflow-wrap:anywhere;pointer-events:none; }
+@media (max-width: 600px) { .ploa-finance-filters { display: grid; grid-template-columns: minmax(0,1fr); gap: 18px; } }

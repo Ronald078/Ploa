@@ -1,0 +1,350 @@
+/* Phone layout: same Ploa palette; the full menu lives in a compact drawer. */
+/* Header tools share the logo row; the navigation adapts to available height. */
+.sidebar .ploa-sidebar-header{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px;flex:0 0 auto;min-width:0}
+.ploa-sidebar-header .sidebar-brand{position:static;display:flex;align-items:center;gap:8px;width:auto;height:48px;min-height:48px;margin:0;padding:0;border:0;overflow:hidden}
+.ploa-sidebar-header .sidebar-brand>div{display:block;min-width:0}
+.ploa-sidebar-header .sidebar-brand .brand-logo{position:static;inset:auto;width:36px;height:36px;flex:0 0 36px;margin:0;transform:none}
+.ploa-sidebar-header .sidebar-brand .product-name{position:static;inset:auto;transform:none;width:auto;margin:0;font-size:.98rem;line-height:1.3;white-space:nowrap}
+.ploa-sidebar-header .sidebar-brand .product-context{display:none}
+.sidebar .ploa-sidebar-tools{display:flex;align-items:center;gap:4px;flex-shrink:0}
+.sidebar .ploa-sidebar-tools :is(.ploa-mobile-access-link,.ploa-collapse){display:inline-flex;align-items:center;justify-content:center;flex:0 0 36px;width:36px;height:36px;min-width:36px;min-height:36px;max-width:36px;margin:0;padding:7px;gap:0;border:1px solid #29455d;border-radius:9px;background:transparent;color:#b9d8f3;box-sizing:border-box}
+.sidebar .ploa-sidebar-tools :is(.ploa-mobile-access-link,.ploa-collapse):hover{background:#142f48;color:#fff}
+.sidebar .ploa-sidebar-tools :is(.ploa-mobile-access-link,.ploa-collapse):focus-visible{outline:2px solid #93c8ff;outline-offset:2px}
+.sidebar .ploa-sidebar-tools svg{width:20px;height:20px;flex:0 0 20px}
+.sidebar .ploa-sidebar-tools :is(.ploa-collapse-label,.ploa-mobile-access-link>span){display:none}
+body.ploa-collapsed .sidebar .ploa-sidebar-header{grid-template-columns:minmax(0,1fr);justify-items:center;gap:6px}
+body.ploa-collapsed .ploa-sidebar-header .sidebar-brand{height:40px;min-height:40px;justify-content:center}
+body.ploa-collapsed .ploa-sidebar-header .sidebar-brand>div{display:none}
+body.ploa-collapsed .sidebar .ploa-sidebar-tools :is(.ploa-mobile-access-link,.ploa-collapse){width:28px;min-width:28px;max-width:28px;flex-basis:28px;height:32px;min-height:32px;padding:4px}
+body.ploa-collapsed .sidebar .ploa-sidebar-tools svg{width:18px;height:18px;flex-basis:18px}
+.ploa-mobile-access-dialog{width:min(960px,calc(100% - 32px));max-width:calc(100% - 32px);max-height:calc(100dvh - 40px);padding:0;border:1px solid #395e7c;border-radius:16px;background:#050c14;color:#ecf4fd;overflow:auto}.ploa-mobile-access-dialog::backdrop{background:#000b}.ploa-mobile-access-heading{position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 22px;background:#091724;border-bottom:1px solid #284256}.ploa-mobile-access-heading h2{font-size:1.1rem;margin:0}.ploa-mobile-access-heading button{min-height:44px;flex-shrink:0}.ploa-mobile-access-content>p{padding:24px;margin:0;line-height:1.7;color:#bdcede}.ploa-mobile-access-dialog .ploa-mobile-diagnostic{width:100%;padding:22px;box-sizing:border-box}.ploa-mobile-access-dialog .ploa-mobile-diagnostic .address{padding:22px}.ploa-mobile-access-dialog .ploa-mobile-diagnostic .diagnostic{padding-block:28px}
+@media(min-width:861px){
+ .sidebar{display:flex;flex-direction:column;overflow:hidden}
+ .sidebar .side-nav{flex:0 0 auto;min-height:0;margin-top:12px;overflow:visible;gap:0}
+ .sidebar .sidebar-flow{flex:0 0 auto;margin-top:auto}
+ .sidebar .sidebar-welcome{flex:0 0 auto}
+ .sidebar .side-nav .nav-heading{max-height:none;padding:10px 11px 4px;line-height:1.4;margin:0}
+ .sidebar .side-nav .nav-item{height:51px;min-height:51px;margin-bottom:4px;flex-shrink:0}
+ body.ploa-collapsed .sidebar .side-nav .nav-heading{height:0;max-height:0;padding:0}
+ body.ploa-collapsed .sidebar .side-nav .nav-item{height:48px;min-height:48px;margin-bottom:4px}
+}
+@media(max-height:860px) and (min-width:861px){.sidebar .sidebar-welcome{display:none}}
+@media(max-height:790px) and (min-width:861px){
+ .sidebar{padding-block:14px}.sidebar .sidebar-flow{display:none}
+ .sidebar .side-nav .nav-heading{padding:7px 11px 3px;font-size:.68rem;line-height:1.4}
+ .sidebar .side-nav .nav-item,body.ploa-collapsed .sidebar .side-nav .nav-item{height:44px;min-height:44px;margin-bottom:3px;padding-block:5px}
+ .sidebar .side-nav .nav-item small{display:none}
+ .sidebar .side-nav .nav-item strong{line-height:1.3}
+}
+@media(max-height:600px) and (min-width:861px){
+ .sidebar{padding-block:10px}.sidebar .side-nav{margin-top:8px}
+ .sidebar .side-nav .nav-heading{padding:5px 11px 2px;font-size:.65rem}
+ .sidebar .side-nav .nav-item,body.ploa-collapsed .sidebar .side-nav .nav-item{margin-bottom:1px}
+}
+.ploa-mobile-menu-button, .ploa-mobile-menu-close, .ploa-mobile-backdrop { display: none; }
+@media (max-width: 860px) {
+  body .sidebar .ploa-sidebar-header,body.ploa-collapsed .sidebar .ploa-sidebar-header{grid-template-columns:minmax(0,1fr) auto;gap:8px;justify-items:stretch;margin-right:48px}
+  body .ploa-sidebar-header .sidebar-brand,body.ploa-collapsed .ploa-sidebar-header .sidebar-brand{height:48px;min-height:48px;justify-content:flex-start;padding:0}
+  body .ploa-sidebar-header .sidebar-brand>div,body.ploa-collapsed .ploa-sidebar-header .sidebar-brand>div{display:block}
+  body .sidebar .ploa-sidebar-tools .ploa-mobile-access-link,body.ploa-collapsed .sidebar .ploa-sidebar-tools .ploa-mobile-access-link{width:44px;min-width:44px;max-width:44px;flex-basis:44px;height:44px;min-height:44px;padding:10px}
+  body .sidebar .ploa-sidebar-tools .ploa-collapse{display:none}
+  .ploa-mobile-access-dialog{max-height:calc(100dvh - 24px)}.ploa-mobile-access-heading{padding:14px 16px}.ploa-mobile-access-heading h2{font-size:1rem}.ploa-mobile-access-dialog .ploa-mobile-diagnostic{padding:16px}
+  html { min-width: 320px; scroll-padding-top: 88px; overflow-x: clip; overflow-y: visible; }
+  body { padding: 0; min-height: 100dvh; overflow: visible; }
+  body.inspector-open:not(.ploa-mobile-menu-open) { overflow: visible; }
+  body.ploa-mobile-menu-open { overflow: hidden; }
+  body .app-frame { display: block; width: 100%; min-height: 100dvh; margin: 0; overflow: visible; border: 0; border-radius: 0; }
+  body .app-shell { width: 100%; min-width: 0; margin: 0; overflow: visible; padding: 0 16px max(28px, env(safe-area-inset-bottom)); transition: none; }
+  body .sidebar {
+    position: fixed; inset: 0 auto 0 0; z-index: 210; display: flex; flex-direction: column;
+    width: min(310px, 86vw); height: 100dvh; max-height: 100dvh; padding: max(18px, env(safe-area-inset-top)) 16px max(18px, env(safe-area-inset-bottom));
+    overflow: hidden; overscroll-behavior: contain; border: 0; border-right: 1px solid #29445c;
+    background: linear-gradient(155deg, #10253a, #07111d 48%, #050c14); backdrop-filter: none;
+    transform: translateX(-105%); visibility: hidden; transition: transform 260ms cubic-bezier(.22,.61,.36,1), visibility 260ms;
+  }
+  body.ploa-mobile-menu-open .sidebar { visibility: visible; transform: none; }
+  body .sidebar-brand { display: flex; align-items: center; gap: 12px; padding: 0 48px 16px 0; min-height: 62px; border: 0; }
+  body .sidebar-brand .brand-logo { display: block; width: 42px; height: 42px; flex: 0 0 42px; }
+  body .sidebar-brand .product-name { font-size: 1.05rem; color: #f0f6fc; }
+  body .sidebar-brand .product-context { display: block; font-size: .76rem; }
+  body .sidebar :is(.sidebar-welcome, .sidebar-flow, .sidebar-health, .ploa-collapse) { display: none; }
+  body .sidebar .side-nav { display: flex; flex-direction: column; flex:0 0 auto; overflow:visible; gap: 5px; margin: 6px 0 0; }
+  body .sidebar .nav-heading { display: block; padding: 14px 12px 5px; color: #a3b9ce; font-size: .75rem; }
+  body .sidebar .nav-item { display: grid; grid-template-columns: 38px minmax(0, 1fr); align-items: center; justify-items: start; gap: 10px; width: 100%; min-height: 55px; margin: 0; padding: 9px 12px; text-align: left; }
+  body .sidebar .nav-icon { width: 36px; height: 36px; }
+  body .sidebar .nav-item strong { font-size: .93rem; }
+  body .sidebar .nav-item small { display: block; margin-top: 3px; font-size: .72rem; }
+  body .sidebar .nav-item::after { display: none; }
+  body .sidebar .nav-item[aria-current="page"] { background: #142f48; border: 1px solid #5c91be; }
+  body .ploa-mobile-menu-button, body .ploa-mobile-menu-close {
+    display: inline-flex; align-items: center; justify-content: center; flex: 0 0 44px; width: 44px; min-width: 44px; height: 44px; padding: 10px;
+    color: #dcecff; background: #10263a; border: 1px solid #34546e; border-radius: 10px;
+  }
+  .ploa-mobile-menu-button svg { width: 22px; height: 22px; }
+  body .ploa-mobile-menu-close { position: absolute; top: max(18px, env(safe-area-inset-top)); right: 16px; font-size: 1.55rem; }
+  body .ploa-mobile-backdrop { position: fixed; inset: 0; z-index: 200; width: 100%; height: 100dvh; padding: 0; border: 0; border-radius: 0; background: rgba(0, 0, 0, .64); }
+  body.ploa-mobile-menu-open .ploa-mobile-backdrop { display: block; }
+  body .topbar { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 12px; min-height: 76px; padding-block: max(12px, env(safe-area-inset-top)) 12px; background: #050505; }
+  body .view-heading { flex: 1 1 auto; min-width: 0; }
+  body .view-heading h1 { margin: 0; font-size: 1.08rem; line-height: 1.3; overflow-wrap: anywhere; }
+  body .view-heading .breadcrumb { display: none; }
+  body .topbar-actions { flex: 0 0 auto; gap: 0; }
+  body .topbar-actions .button { min-height: 44px; padding: 10px; font-size: .75rem; }
+  body main { padding-top: 12px; }
+  body main, .view-panel, .module-layout, .ploa-operation-body, .ploa-section { min-width: 0; max-width: 100%; }
+  body .page-intro { flex-wrap: wrap; gap: 12px; margin-bottom: 20px; }
+  body .page-intro h2 { font-size: 1.5rem; overflow-wrap: anywhere; }
+  body .page-intro p, body .page-intro span { overflow-wrap: anywhere; }
+  body .overview-hero { padding: 22px 18px; gap: 20px; min-height: 0; }
+  body .command-copy h2 { font-size: clamp(1.75rem, 7vw, 2.5rem); line-height: 1.18; }
+  body .response-visual { justify-self: center; }
+  body :is(.ploa-form-grid, .settings-composer, .message-settings-grid, .copy-filter-grid, .ploa-finance-filters, .ploa-toolbar, .ploa-preview-fields) { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  body :is(.ploa-form-grid, .settings-composer, .message-settings-grid, .copy-filter-grid, .ploa-toolbar) > * { min-width: 0; max-width: 100%; grid-column: auto; }
+  body :is(input, select, textarea, .ploa-select-trigger) { max-width: 100%; font-size: 16px; }
+  body :is(input, select, .ploa-select-trigger):not([type="checkbox"]):not([type="radio"]) { min-height: 46px; }
+  body textarea { width: 100%; }
+  body :is(.button, .copy-action, .text-action) { min-height: 44px; line-height: 1.4; white-space: normal; overflow-wrap: anywhere; }
+  body .ploa-actions { flex-wrap: wrap; gap: 12px; }
+  body :is(.ploa-section, .settings-body, .settings-panel, .copy-editor-body) { padding: 18px 16px; }
+  body .copy-card-grid { grid-template-columns: minmax(0, 1fr); }
+  body .copy-card-actions { grid-column: 1 / -1; flex-wrap: wrap; }
+  body .copy-message { font-size: .97rem; line-height: 1.7; }
+  body .ploa-plan-cities { columns: 1; }
+  body :is(.modal-dialog, dialog.cm-dialog) { width: calc(100% - 24px); max-width: calc(100% - 24px); max-height: calc(100dvh - 24px); padding: 0; overflow-y: auto; }
+  body .ploa-select-menu { max-width: calc(100vw - 24px); }
+  body .ploa-select-option { min-height: 44px; padding-block: 12px; }
+  body[data-view="leads"] .workspace { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; border: 0; background: transparent; }
+  body[data-view="leads"] .lead-ledger { padding: 16px 12px; border: 1px solid #29435b; border-radius: 12px; }
+  body[data-view="leads"] .ledger-toolbar { display: grid; grid-template-columns: minmax(0, 1fr); align-items: start; gap: 16px; }
+  body[data-view="leads"] .ledger-toolbar .filters { flex: none; width: 100%; }
+  body[data-view="leads"] .lead-queues button { align-items: start; }
+  body[data-view="leads"] .lead-queues button :is(span,strong) { white-space: normal; overflow-wrap: anywhere; }
+  body[data-view="leads"] .lead-list { max-height: 420px; overflow-x: hidden; }
+  body[data-view="leads"] .lead-row { grid-template-columns: minmax(0, 1fr) auto; gap: 8px; padding: 14px 10px; }
+  body[data-view="leads"] .lead-action { grid-column: 1 / -1; }
+  body[data-view="leads"] .lead-identity { min-width: 0; }
+  body[data-view="leads"] .lead-identity strong { white-space: normal; overflow-wrap: anywhere; }
+  body[data-view="leads"] .lead-inspector { position: static; width: 100%; height: auto; min-height: 0; transform: none; grid-column: 1; border: 1px solid #29435b; border-radius: 12px; box-shadow: none; }
+  body[data-view="leads"] .ploa-conversation { grid-template-rows: auto minmax(230px, auto) auto; scroll-margin-top: 96px; }
+  body[data-view="leads"] .ploa-conversation-head { align-items: start; padding: 16px; }
+  body[data-view="leads"] .ploa-conversation-head h3 { overflow-wrap: anywhere; }
+  body[data-view="leads"] .ploa-bubble { max-width: 100%; font-size: .96rem; }
+  body[data-view="leads"] .ploa-composer { padding: 16px; }
+  body .process-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+  body .process-actions .button { flex: 1 1 110px; }
+  body .module-feature { padding: 22px 18px; }
+  body .module-feature h3 { overflow-wrap: anywhere; font-size: 1.35rem; }
+  body .process-console { max-width: calc(100% - 24px); overflow: hidden; }
+  body .process-console pre { max-width: 100%; overflow: auto; }
+  body .toast { max-width: calc(100vw - 32px); right: 16px; bottom: max(18px, env(safe-area-inset-bottom)); overflow-wrap: anywhere; }
+  body :is(.form-actions, .copy-form-actions, .dialog-actions) { flex-wrap: wrap; gap: 12px; }
+  body .form-actions .button { width: 100%; }
+}
+@media (max-width: 520px) {
+  body[data-view="leads"] .ploa-toolbar { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  body .sidebar { transition: none; }
+}
+
+@media(max-width:860px) and (max-height:760px){
+ body .sidebar .side-nav{gap:2px;margin-top:8px}
+ body .sidebar .side-nav .nav-heading{padding:6px 12px 3px;font-size:.68rem;line-height:1.3}
+ body .sidebar .side-nav .nav-item{min-height:44px;height:44px;padding-block:5px}
+ body .sidebar .side-nav .nav-item small{display:none}
+ body .sidebar .side-nav .nav-item strong{font-size:.9rem}
+}
+@media(max-height:790px) and (min-width:861px){body:not(.ploa-collapsed) .sidebar .side-nav .nav-item{height:44px;min-height:44px}}
+
+/* Mobile page controls: shared spacing, readable choices and comfortable touch targets.
+   Keep these rules out of the desktop layout and the compact sidebar. */
+@media (max-width: 860px) {
+  body .view-panel :is(.panel, .ploa-section, .script-settings-panel, .ploa-commercial,
+    .ploa-conversation, .copy-card, .cm-panel, .cm-form, .cm-toolbar) {
+    min-width: 0;
+  }
+
+  body .view-panel :is(.button, .copy-action, .operation-stage-action),
+  body :is(.modal-dialog, .cm-dialog) .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    height: auto;
+    max-width: 100%;
+    padding-block: 8px;
+    line-height: 1.4;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    text-align: center;
+    touch-action: manipulation;
+  }
+
+  body .view-panel .operation-stage-action {
+    justify-content: flex-start;
+    width: fit-content;
+    padding-inline: 0;
+    font-size: .86rem;
+  }
+
+  body .view-panel :is(.ploa-actions, .process-actions, .copy-form-actions,
+    .settings-footer, .cm-actions) {
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  body .view-panel .ploa-select-trigger,
+  body :is(.modal-dialog, .cm-dialog) .ploa-select-trigger {
+    height: auto;
+    padding: 12px 44px 12px 14px;
+    line-height: 1.5;
+  }
+
+  body .ploa-select-shell .ploa-select-trigger > span {
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  body .ploa-select-trigger::after { right: 18px; }
+
+  body .view-panel details > summary {
+    min-height: 44px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+
+  body .view-panel details[open] > summary {
+    margin-bottom: 12px;
+    padding-block: 8px;
+  }
+
+  body .view-panel .ploa-operation-fold[open] > summary { margin-bottom: 0; }
+  body .view-panel .ploa-operation-fold-body { padding-top: 12px; }
+  body .view-panel .ploa-operation-fold-body > .ploa-section > :first-child { margin-top: 0; }
+
+  body .view-panel :is(.settings-heading, .settings-footer, .copy-filter-grid,
+    .copy-editor-context, .copy-list, .copy-form, .copy-editor-footer) {
+    padding-inline: 16px;
+  }
+
+  body .view-panel :is(.settings-heading, .copy-editor-context) { gap: 14px; }
+  body .view-panel :is(.settings-heading, .settings-footer, .copy-editor-footer) {
+    flex-wrap: wrap;
+  }
+  body .view-panel :is(.settings-heading, .settings-footer, .copy-editor-footer) > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  body .view-panel :is(.settings-item-copy strong, .settings-item-copy small) {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    text-overflow: clip;
+  }
+  body .view-panel .settings-item { gap: 12px; }
+  body .view-panel .settings-remove { min-width: 44px; min-height: 44px; flex-shrink: 0; }
+
+  body .view-panel :is(.message-settings-grid, .copy-filter-grid, .settings-composer,
+    .ploa-form-grid, .cm-form) label {
+    min-width: 0;
+    line-height: 1.5;
+  }
+  body .view-panel input[type="file"] { min-width: 0; width: 100%; }
+  body .view-panel :is(input[type="checkbox"], input[type="radio"]) {
+    flex-shrink: 0;
+    touch-action: manipulation;
+  }
+  body .view-panel label:has(> input:is([type="checkbox"], [type="radio"])) {
+    min-height: 44px;
+    cursor: pointer;
+  }
+  body .view-panel .ploa-token-options .button { min-height: 44px; }
+  body .view-panel .cm-card .cm-actions .button {
+    min-height: 44px;
+    padding: 11px 12px;
+    font-size: .84rem;
+    flex: 1 1 auto;
+  }
+  body .view-panel .cm-card .cm-card-favorite {
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    min-height: 44px;
+    padding: 0;
+  }
+  body .view-panel :is(.locality-suggestion, .category-suggestion) {
+    min-height: 48px;
+    flex-wrap: wrap;
+    gap: 6px 10px;
+    padding: 12px;
+    touch-action: manipulation;
+  }
+  body .view-panel :is(.locality-suggestion-copy, .category-suggestion-copy) {
+    flex: 1 1 150px;
+    min-width: 0;
+  }
+  body .view-panel :is(.locality-suggestion-copy, .category-suggestion-copy) :is(strong, small) {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    text-overflow: clip;
+    line-height: 1.5;
+  }
+
+  body[data-view="leads"] .inspector-header { align-items: flex-start; gap: 12px; }
+  body[data-view="leads"] .inspector-header > div { min-width: 0; }
+  body[data-view="leads"] #close-inspector {
+    flex: 0 0 44px;
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    min-height: 44px;
+    padding: 0;
+  }
+
+  body :is(.modal-dialog, .cm-dialog) :is(.form-actions, .dialog-actions, .cm-actions) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  body :is(.modal-dialog, .cm-dialog) :is(input, textarea, .ploa-select-trigger) {
+    min-width: 0;
+    max-width: 100%;
+    font-size: 16px;
+  }
+  body dialog.cm-dialog { padding: 16px; }
+  body dialog.cm-dialog > .cm-topline {
+    top: -16px;
+    margin: -16px -16px 16px;
+    padding: 16px;
+    gap: 12px;
+  }
+  body dialog.cm-dialog > .cm-topline > .button { flex-shrink: 0; }
+  body dialog.cm-dialog details > summary { min-height: 44px; line-height: 1.5; }
+  body dialog.cm-dialog .cm-production-nav { gap: 10px; }
+  body dialog.cm-dialog .cm-actions > .button { flex: 1 1 160px; }
+}
+
+@media (max-width: 480px) {
+  body .view-panel :is(.process-actions, .ploa-actions, .copy-form-actions, .ploa-test-actions) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    width: auto;
+  }
+  body .view-panel :is(.process-actions, .ploa-actions, .copy-form-actions, .ploa-test-actions) > .button {
+    width: auto;
+    flex: 0 1 auto;
+    min-width: 0;
+    margin: 0;
+  }
+  body .view-panel .copy-card-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+  body .view-panel .copy-card-actions .copy-action { flex: 1 1 auto; padding-inline: 10px; }
+  body[data-view="leads"] .lead-row { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  body[data-view="leads"] .lead-row .status-chip { justify-self: start; max-width: 100%; }
+  body .view-panel .settings-footer .button { width: auto; }
+  body .view-panel .ploa-test-metrics { grid-template-columns: minmax(0, 1fr); }
+}

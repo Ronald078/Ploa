@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="color-scheme" content="dark">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Ploa</title>
+    <meta name="description" content="Central local para acompanhar prospecção, funil, leads e módulos da operação.">
+    <meta name="ploa-interface-version" content="20261026-tokens-1">
+    <link rel="stylesheet" href="/styles.css?v=20261024-melhorias-paginas-1">
+    <link rel="stylesheet" href="/ploa-theme.css?v=20261101-local-phone-1">
+    <link rel="stylesheet" href="/ploa-operations.css?v=20261024-melhorias-paginas-1">
+    <link rel="stylesheet" href="/ploa-page-details.css?v=20261025-enquadramento-2">
+    <link rel="stylesheet" href="/ploa-ia-tests.css?v=20261025-ia-abas-1">
+    <link rel="stylesheet" href="/ploa-token-usage.css?v=20261027-rotacao-1">
+    <script src="/modules/catalogs.js?v=20261024-melhorias-paginas-1" defer></script>
+    <script src="/modules/elements.js?v=20261024-melhorias-paginas-1" defer></script>
+    <script src="/modules/core.js?v=20261101-performance-1" defer></script>
+    <script src="/modules/suggestions.js?v=20261024-melhorias-paginas-1" defer></script>
+    <script src="/modules/dashboard.js?v=20261030-pagamento-1" defer></script>
+    <script src="/modules/leads.js?v=20261024-melhorias-paginas-1" defer></script>
+    <script src="/modules/funnel.js?v=20261024-melhorias-paginas-1" defer></script>
+    <script src="/modules/settings.js?v=20261027-minerador-1" defer></script>
+    <script src="/modules/copies.js?v=20261024-melhorias-paginas-1" defer></script>
+    <script src="/modules/processes.js?v=20261101-pairing-1" defer></script>
+    <script src="/modules/ads.js?v=20261027-minerador-1" defer></script>
+    <script src="/ploa-copy-preview.js?v=20261024-melhorias-paginas-1" defer></script>
+    <script src="/creative-render.js?v=20261031-materials-1" defer></script>
+    <script src="/creative-production.js?v=20261031-materials-1" defer></script>
+    <script src="/creative-site.js?v=20261027-1" defer></script>
+    <script src="/creative-miner.js?v=20261030-render-1" defer></script>
+    <script src="/app.js?v=20261024-melhorias-paginas-1" defer></script>
+    <script src="/ploa-metrics.js?v=20261030-comercial-1" defer></script>
+    <script src="/ploa-token-usage.js?v=20261027-minerador-1" defer></script>
+    <script src="/ploa-ia-tests.js?v=20261101-performance-1" defer></script>
+    <script src="/ploa-sections.js?v=20261101-pairing-1" defer></script>
+    <script src="/ploa-triage.js?v=20261024-melhorias-paginas-1" defer></script>
+    <script src="/workspace/selects.js?v=20261027-modelagem-1" defer></script>
+    <script src="/workspace/conversation.js?v=20261024-melhorias-paginas-1" defer></script>
+    <script src="/workspace/filters.js?v=20261024-melhorias-paginas-1" defer></script>
+    <script src="/workspace/pairing.js?v=20261101-local-phone-1" defer></script>
+    <script src="/workspace/attendance.js?v=20261101-sidebar-fix-1" defer></script>
+    <script src="/workspace/connection.js?v=20261027-rotacao-1" defer></script>
+    <script src="/workspace/business.js?v=20261024-melhorias-paginas-1" defer></script>
+    <script src="/workspace/knowledge.js?v=20261027-rotacao-1" defer></script>
+    <script src="/workspace/versions.js?v=20261030-comercial-1" defer></script>
+    <script src="/workspace/priorities.js?v=20261024-melhorias-paginas-1" defer></script>
+    <script src="/workspace/runs.js?v=20261024-melhorias-paginas-1" defer></script>
+    <script src="/workspace/backup.js?v=20261024-melhorias-paginas-1" defer></script>
+    <script src="/workspace/processes.js?v=20261024-melhorias-paginas-1" defer></script>
+    <script src="/mobile-access.js?v=20261031-modal-2" defer></script>
+    <script src="/workspace/sidebar.js?v=20261101-sidebar-fix-1" defer></script>
+    <script src="/ploa-search-plan.js?v=20261024-melhorias-paginas-1" defer></script>
+    <script src="/ploa-workspace.js?v=20261101-performance-1" defer></script>
+    <link rel="stylesheet" href="/creative-miner.css?v=20261031-materials-1">
+    <link rel="stylesheet" href="/styles/mobile-access.css?v=20261101-controls-1">
+    <link rel="stylesheet" href="/styles/mobile-diagnostic.css?v=20261031-modal-2">
+</head>
+  <body data-view="overview">
+    <a class="skip-link" href="#main-content">Ir para o conteúdo</a>
+
+    <svg class="icon-library" aria-hidden="true">
+      <symbol id="icon-ai" viewBox="0 0 24 24"><rect x="5" y="6" width="14" height="13" rx="4"/><path d="M12 3v3M2 11h3m14 0h3M9 15h6"/><circle cx="9" cy="11" r=".8"/><circle cx="15" cy="11" r=".8"/></symbol>
+      <symbol id="icon-overview" viewBox="0 0 24 24">
+        <path d="M4 5.5h6v5H4zM14 5.5h6v9h-6zM4 14.5h6v4H4zM14 18.5h6"/>
+      </symbol>
+      <symbol id="icon-funnel" viewBox="0 0 24 24">
+        <path d="M3.5 5h17l-3.2 4.4H6.7L3.5 5ZM7.4 11.4h9.2l-2.2 3.3H9.6l-2.2-3.3ZM10.2 16.7h3.6L12 20l-1.8-3.3Z"/>
+      </symbol>
+      <symbol id="icon-leads" viewBox="0 0 24 24">
+        <circle cx="8" cy="8" r="2.5"/><circle cx="17" cy="6" r="2"/><circle cx="17" cy="17" r="2.5"/>
+        <path d="m10.4 7.4 4.6-.9M9.7 9.9l5.7 5.3M5.5 12.5c-1.8 1-2.8 2.6-3 5h8.8"/>
+      </symbol>
+      <symbol id="icon-search" viewBox="0 0 24 24">
+        <circle cx="10.5" cy="10.5" r="5.5"/><path d="m14.7 14.7 5 5M10.5 7.7v5.6M7.7 10.5h5.6"/>
+      </symbol>
+      <symbol id="icon-message" viewBox="0 0 24 24">
+        <path d="M4 5.5h12a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3H9l-4.5 3v-3.6A3 3 0 0 1 2 13V8.5a3 3 0 0 1 2-3Z"/>
+        <path d="M7 9.2h7M7 12.5h4.5"/>
+      </symbol>
+      <symbol id="icon-ads" viewBox="0 0 24 24">
+        <path d="M4 13.5V9l11-4v13L4 13.5Z"/><path d="M15 8.2c2 .8 3 2 3 3.1s-1 2.3-3 3.1M6.5 14.5l1 5h3l-1.2-4"/>
+      </symbol>
+      <symbol id="icon-pulse" viewBox="0 0 24 24">
+        <path d="M3 12h4l2-5 4 10 2-5h6"/>
+      </symbol>
+      <symbol id="icon-copy" viewBox="0 0 24 24">
+        <rect x="8" y="8" width="11" height="11" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/>
+      </symbol>
+      <symbol id="icon-play" viewBox="0 0 24 24">
+        <path d="m8 5 11 7-11 7V5Z"/>
+      </symbol>
+      <symbol id="icon-stop" viewBox="0 0 24 24">
+        <rect x="6" y="6" width="12" height="12" rx="2"/>
+      </symbol>
+      <symbol id="icon-terminal" viewBox="0 0 24 24">
+        <path d="m5 7 4 4-4 4M11.5 16H19"/>
+      </symbol>
+      <symbol id="icon-grid" viewBox="0 0 24 24">
+        <rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/>
+      </symbol>
+      <symbol id="icon-trend" viewBox="0 0 24 24">
+        <path d="m4 17 5-5 4 3 7-8M15 7h5v5"/>
+      </symbol>
+    </svg>
+
+    <div class="app-frame">
+      <aside class="sidebar" aria-label="Navegação principal">
+        <div class="sidebar-brand">
+          <img class="brand-logo" src="/assets/ploa-logo-transparent.png" alt="" aria-hidden="true">
+          <div>
+            <p class="product-name">Ploa</p>
+            <p class="product-context">Operação e vendas</p>
+          </div>
+        </div>
+
+        <div class="sidebar-welcome">
+          <span>Bem-vindo de volta</span>
+          <strong>Ronald</strong>
+          <p>Sua prospecção em um só lugar.</p>
+        </div>
+
+        <nav class="side-nav" aria-label="Módulos do painel">
+          <p class="nav-heading">Análise</p>
+          <button class="nav-item" type="button" data-view-target="overview" aria-current="page">
+            <span class="nav-icon"><svg><use href="#icon-overview"></use></svg></span>
+            <span><strong>Dashboard</strong><small>Resultado e prioridades</small></span>
+          </button>
+          <button class="nav-item" type="button" data-view-target="funnel">
+            <span class="nav-icon"><svg><use href="#icon-funnel"></use></svg></span>
+            <span><strong>Funil</strong><small>Etapas e conversão</small></span>
+          </button>
+          <button class="nav-item" type="button" data-view-target="leads">
+            <span class="nav-icon"><svg><use href="#icon-leads"></use></svg></span>
+            <span><strong>Leads</strong><small>Fila e acompanhamento</small></span>
+          </button>
+
+          <p class="nav-heading">Operação</p>
+          <button class="nav-item" type="button" data-view-target="search">
+            <span class="nav-icon"><svg><use href="#icon-search"></use></svg></span>
+            <span><strong>Buscar leads</strong><small>Coleta no OpenStreetMap</small></span>
+          </button>
+          <button class="nav-item" type="button" data-view-target="messages">
+            <span class="nav-icon"><svg><use href="#icon-message"></use></svg></span>
+            <span><strong>Mensagens</strong><small>Progresso dos envios</small></span>
+          </button>
+
+          <button class="nav-item" type="button" data-view-target="ai">
+            <span class="nav-icon"><svg><use href="#icon-ai"></use></svg></span>
+            <span><strong>IA</strong><small>Atendimento e orientações</small></span>
+          </button>
+          <button class="nav-item" type="button" data-view-target="copies">
+            <span class="nav-icon"><svg><use href="#icon-copy"></use></svg></span>
+            <span><strong>Copys</strong><small>Mensagens por país e categoria</small></span>
+          </button>
+
+          <p class="nav-heading">Laboratório</p>
+          <button class="nav-item" type="button" data-view-target="ads">
+            <span class="nav-icon"><svg><use href="#icon-ads"></use></svg></span>
+            <span><strong>Anúncios</strong><small>Mineração de criativos</small></span>
+          </button>
+        </nav>
+
+        <div class="sidebar-flow" aria-hidden="true">
+          <div class="sidebar-flow-brand">
+            <img src="/assets/ploa-logo-transparent.png" alt="">
+            <span><strong>Fluxo local</strong><small>Buscar, conversar e vender</small></span>
+          </div>
+          <div class="sidebar-flow-track"><i></i><i></i><i></i></div>
+        </div>
+
+      </aside>
+
+      <div class="app-shell">
+        <header class="topbar">
+          <div class="view-heading">
+            <div class="breadcrumb"><span>Operação</span><i>/</i><p id="view-kicker">Análise da operação</p></div>
+            <h1 id="view-title">Dashboard</h1>
+          </div>
+          <div class="topbar-actions">
+            <p id="sync-status" class="sync-status" role="status">Carregando dados…</p>
+            <button id="refresh-button" class="button button-secondary" type="button">Atualizar dados</button>
+          </div>
+        </header>
+
+        <main id="main-content" tabindex="-1">
+          <section class="view-panel" data-view-panel="overview" aria-labelledby="overview-title">
+            <div class="overview-hero">
+              <div class="command-copy">
+                <p id="today-label" class="today-label"></p>
+                <h2 id="overview-title">O que merece atenção agora</h2>
+                <div id="attention-feed" class="attention-feed" aria-live="polite">
+                  <div class="attention-news-loading">Lendo os acontecimentos da operação…</div>
+                </div>
+                <div class="hero-actions">
+                  <button class="text-action" type="button" data-open-view="leads">Abrir fila de leads</button>
+                  <span class="live-indicator"><i></i>Atualização automática a cada 30 segundos</span>
+                </div>
+              </div>
+
+              <div class="response-visual" aria-label="Taxa de resposta">
+                <svg class="response-ring" viewBox="0 0 140 140" role="img" aria-labelledby="response-ring-title">
+                  <title id="response-ring-title">Taxa de resposta da prospecção</title>
+                  <circle class="response-ring-track" cx="70" cy="70" r="54"></circle>
+                  <circle id="response-ring-value" class="response-ring-value" cx="70" cy="70" r="54"></circle>
+                </svg>
+                <div class="response-ring-copy">
+                  <strong id="metric-response-rate">—</strong>
+                  <span>taxa de resposta</span>
+                </div>
+              </div>
+            </div>
+
+            <dl class="metric-grid executive-metrics" aria-label="Resultado comercial">
+              <div class="metric-card metric-card-revenue">
+                <dt>Faturamento ganho</dt>
+                <dd id="metric-revenue">—</dd>
+                <span class="metric-detail">valor dos clientes fechados</span>
+                <svg aria-hidden="true"><use href="#icon-trend"></use></svg>
+              </div>
+              <div class="metric-card metric-card-pipeline">
+                <dt>Pipeline aberto</dt>
+                <dd id="metric-pipeline-value">—</dd>
+                <span class="metric-detail">potencial ainda em negociação</span>
+                <svg aria-hidden="true"><use href="#icon-funnel"></use></svg>
+              </div>
+              <div class="metric-card metric-card-sales">
+                <dt>Vendas</dt>
+                <dd id="metric-sales">—</dd>
+                <span class="metric-detail">clientes conquistados</span>
+                <svg aria-hidden="true"><use href="#icon-leads"></use></svg>
+              </div>
+              <div class="metric-card metric-card-ticket">
+                <dt>Ticket médio</dt>
+                <dd id="metric-ticket">—</dd>
+                <span class="metric-detail">média das vendas com valor</span>
+                <svg aria-hidden="true"><use href="#icon-pulse"></use></svg>
+              </div>
+            </dl>
+
+            <div class="overview-grid overview-commerce-grid">
+              <section class="panel revenue-panel" aria-labelledby="revenue-chart-title">
+                <div class="panel-heading">
+                  <div><h3 id="revenue-chart-title">Valor por etapa comercial</h3><p>Distribuição entre interesse, proposta, negociação e venda.</p></div>
+                  <button class="text-action" type="button" data-open-view="funnel">Ver análise completa</button>
+                </div>
+                <div id="revenue-stage-chart" class="revenue-stage-chart" aria-label="Valores por etapa do funil"></div>
+              </section>
+
+              <section class="panel attention-panel" aria-labelledby="attention-title">
+                <div class="panel-heading"><div><h3 id="attention-title">Sinais da operação</h3><p>O que realmente pede uma próxima ação.</p></div></div>
+                <div class="signal-list">
+                  <button type="button" data-open-view="leads" data-attention-shortcut="acao_agora"><span>Conversas que precisam de você</span><strong id="signal-to-qualify">—</strong><small>decisões, negociações e retornos atuais</small></button>
+                  <button type="button" data-open-view="leads" data-attention-shortcut="propostas"><span>Propostas em andamento</span><strong id="signal-open-proposals">—</strong><small>proposta ou negociação</small></button>
+                  <button type="button" data-open-view="leads" data-attention-shortcut="retornos"><span>Retornos pendentes</span><strong id="signal-follow-ups">—</strong><small>vencidos ou para hoje</small></button>
+                </div>
+              </section>
+            </div>
+
+            <section class="panel overview-funnel-panel" aria-labelledby="preview-title">
+              <div class="panel-heading">
+                <div><h3 id="preview-title">Conversão da prospecção</h3><p>Da primeira copy enviada até o cliente conquistado.</p></div>
+                <button class="text-action" type="button" data-open-view="funnel">Abrir funil</button>
+              </div>
+              <div id="funnel-preview" class="funnel-preview" aria-label="Prévia do funil"></div>
+            </section>
+          </section>
+
+          <section class="view-panel" data-view-panel="funnel" aria-labelledby="pipeline-title" hidden>
+            <div class="page-intro">
+              <div><p>Conversão comercial</p><h2 id="pipeline-title">Da primeira copy à venda</h2><span>Veja onde os contatos estão parando e quais conversas precisam avançar.</span></div>
+              <div class="daily-signal"><strong id="funnel-conversion-rate">—</strong><span>conversão em cliente</span></div>
+            </div>
+
+            <div class="funnel-dashboard">
+              <section class="panel funnel-chart-panel" aria-labelledby="funnel-chart-title">
+                <div class="panel-heading"><div><h3 id="funnel-chart-title">Avanço dos contatos</h3><p>Compare a quantidade que chegou a cada etapa, do primeiro contato à venda registrada.</p></div><span id="funnel-chart-total" class="panel-total">— contatos</span></div>
+                <div id="funnel-chart" class="funnel-chart" role="group" aria-label="Gráfico interativo do funil"></div>
+              </section>
+
+              <aside class="funnel-insights" aria-label="Leituras do funil">
+                <article><span>Etapa com maior fila</span><strong id="insight-largest-stage">—</strong><p id="insight-largest-detail">Carregando contatos por etapa…</p></article>
+                <article><span>Leads em oportunidade</span><strong id="insight-opportunity-rate">—</strong><p>contatos com interesse, proposta ou negociação</p></article>
+                <article><span>Taxa de fechamento</span><strong id="insight-client-rate">—</strong><p>clientes conquistados sobre contatos acompanhados</p></article>
+              </aside>
+            </div>
+
+            <section class="panel funnel-operation-panel" aria-labelledby="funnel-operation-title">
+              <div class="panel-heading">
+                <div><h3 id="funnel-operation-title">Operação, copys e critérios de avanço</h3><p>O que é feito, quais dados alimentam cada fase e quando o contato avança.</p></div>
+                <button class="text-action" type="button" data-open-view="copies">Gerenciar copys</button>
+              </div>
+              <div id="funnel-operation" class="funnel-operation"></div>
+              <div id="funnel-copy-support" class="funnel-copy-support" aria-live="polite"></div>
+            </section>
+
+            <section class="panel funnel-outcomes-panel" aria-labelledby="funnel-outcomes-title">
+              <div class="panel-heading"><div><h3 id="funnel-outcomes-title">Saídas e triagem automática</h3><p>Situações que precisam de tratamento diferente do avanço comercial.</p></div></div>
+              <div id="funnel-outcomes" class="funnel-outcomes"></div>
+            </section>
+
+            <section class="panel stage-filter-panel" aria-labelledby="stage-filter-title">
+              <div class="panel-heading"><div><h3 id="stage-filter-title">Filtro rápido</h3><p>Escolha uma etapa e abra a fila correspondente.</p></div></div>
+              <div id="pipeline" class="pipeline" role="group" aria-label="Filtrar por etapa do funil"></div>
+            </section>
+          </section>
+
+          <section class="view-panel" data-view-panel="leads" aria-labelledby="lista-leads" hidden>
+            <div class="page-intro compact-intro">
+              <div><p>Relacionamento comercial</p><h2 id="lista-leads">Fluxo de contatos</h2><span id="result-count">Preparando a lista…</span></div>
+              <button class="text-action" type="button" data-open-view="ai" data-ai-history>Organizar histórico com IA</button>
+            </div>
+
+            <div id="lead-queues" class="lead-queues" aria-label="Filas inteligentes de leads"></div>
+
+            <section class="workspace" aria-label="Área de trabalho do CRM">
+              <div class="lead-ledger">
+                <div class="ledger-toolbar">
+                  <div class="filters">
+                    <label class="search-field">
+                      <span>Buscar lead</span>
+                      <input id="search-input" type="search" placeholder="Nome ou final do número" autocomplete="off">
+                    </label>
+                    <label>
+                      <span>Mostrar</span>
+                      <select id="attention-filter">
+                        <option value="todos">Todos os contatos</option>
+                        <option value="precisam_acao">Precisam de ação</option>
+                        <option value="sem_resposta">Sem resposta</option>
+                        <option value="automaticos">Atendimento automático</option>
+                        <option value="resposta_humana">Resposta humana</option>
+                        <option value="acao_agora">Precisa de você agora</option>
+                        <option value="historico_triagem">Histórico para triagem</option>
+                        <option value="sem_texto">Histórico sem texto recebido</option>
+                        <option value="para_classificar">Respostas com texto por classificar</option>
+                        <option value="retornos">Retornos pendentes</option>
+                        <option value="oportunidades">Oportunidades</option>
+                        <option value="propostas">Propostas e negociações</option>
+                        <option value="negociacoes">Em negociação</option>
+                        <option value="clientes">Clientes</option>
+                        <option value="vendas">Vendas com valor</option>
+                        <option value="encerrados">Recusados ou sem avanço</option>
+                        <option value="vinculos">Dados sem vínculo</option>
+                      </select>
+                    </label>
+                  </div>
+                  <button id="clear-filters-button" class="button button-tertiary" type="button">Limpar filtros</button>
+                </div>
+
+                <div class="ledger-head" aria-hidden="true">
+                  <span>Contato</span><span>Classificação</span><span>Próxima ação</span><span>Última atividade</span>
+                </div>
+                <div id="lead-list" class="lead-list" aria-live="polite"></div>
+                <button id="load-more-button" class="button load-more-button" type="button" hidden>Carregar mais leads</button>
+                <div id="empty-state" class="empty-state" hidden><p>Nenhum lead corresponde a este filtro.</p></div>
+              </div>
+
+              <aside id="lead-inspector" class="lead-inspector" aria-labelledby="inspector-title">
+                <div id="inspector-placeholder" class="inspector-placeholder">
+                  <div class="placeholder-orbit" aria-hidden="true"></div>
+                  <h2>Escolha um lead</h2>
+                  <p>Abra um contato para ver a conversa, planejar o retorno e movimentar a oportunidade.</p>
+                </div>
+
+                <div id="inspector-content" hidden>
+                  <div class="inspector-header">
+                    <div><p id="inspector-number" class="inspector-number"></p><h2 id="inspector-title"></h2></div>
+                    <button id="close-inspector" class="icon-button" type="button" aria-label="Fechar detalhes">×</button>
+                  </div>
+
+                  <div class="contact-stats" aria-label="Atividade do contato">
+                    <div><strong id="inspector-sent">0</strong><span>enviadas</span></div>
+                    <div><strong id="inspector-received">0</strong><span>respostas</span></div>
+                    <div><strong id="inspector-first-contact">—</strong><span>primeiro contato</span></div>
+                  </div>
+
+                  <section class="classification-card" aria-labelledby="classification-title">
+                    <div class="classification-card-head">
+                      <div><span>Triagem do contato</span><h3 id="classification-title">Classificação inteligente</h3></div>
+                      <strong id="classification-origin" class="classification-origin">—</strong>
+                    </div>
+                    <p id="classification-reason" class="classification-reason">Aguardando análise da resposta.</p>
+                    <dl class="classification-details">
+                      <div><dt>Confiança</dt><dd id="classification-confidence">—</dd></div>
+                      <div><dt>Idioma</dt><dd id="classification-language">—</dd></div>
+                      <div><dt>Próxima ação sugerida</dt><dd id="classification-action">—</dd></div>
+                    </dl>
+                  </section>
+
+                  <form id="lead-form" class="lead-form">
+                    <label><span>Etapa do funil</span><select id="lead-status" name="status"></select></label>
+                    <label><span>Próxima ação</span><input id="lead-next-action" name="proxima_acao" maxlength="240" placeholder="Ex.: enviar proposta comercial"></label>
+                    <div class="form-row">
+                      <label><span>Data do retorno</span><input id="lead-next-contact" name="proximo_contato" type="date"></label>
+                      <label><span>Valor estimado da oportunidade</span><input id="lead-value" name="valor_estimado" type="number" min="0" step="0.01" placeholder="0,00"></label>
+                    </div>
+                    <label><span>Adicionar nota</span><textarea id="lead-note" name="nota" maxlength="1000" rows="3" placeholder="Registre contexto útil para o próximo contato"></textarea></label>
+                    <div class="form-actions"><p id="form-status" role="status"></p><button class="button button-primary" type="submit">Salvar acompanhamento</button></div>
+                  </form>
+
+                  <section class="history" aria-labelledby="history-title">
+                    <div class="history-heading"><h3 id="history-title">Histórico recente</h3><span id="history-count"></span></div>
+                    <div id="history-list" class="history-list"></div>
+                  </section>
+                </div>
+              </aside>
+            </section>
+          </section>
+
+          <section class="view-panel" data-view-panel="search" aria-labelledby="search-module-title" hidden>
+            <div class="page-intro">
+              <div><p>Coleta de contatos</p><h2 id="search-module-title">Buscar leads</h2><span>Execute a coleta, acompanhe cada cidade e consulte o retorno do script sem sair do painel.</span></div>
+              <span id="search-run-state" class="module-state" data-process-status="idle"><i></i>Pronto para iniciar</span>
+            </div>
+            <div class="module-layout">
+              <section class="panel process-control execution-first" data-process-panel="search">
+                <div class="process-control-head">
+                  <div><h3>Controle da busca</h3><p>Uma única execução por vez. Ao encerrar, a próxima busca retoma o checkpoint gravado pelo script.</p></div>
+                  <div class="process-actions">
+                    <button class="button button-run" type="button" data-process-start="search"><svg><use href="#icon-play"></use></svg>Iniciar busca</button>
+                    <button class="button button-stop" type="button" data-process-stop="search" disabled><svg><use href="#icon-stop"></use></svg>Encerrar</button>
+                  </div>
+                </div>
+                <div class="process-meta" aria-label="Estado da execução">
+                  <span><small>Processo</small><strong id="search-process-status">Aguardando</strong></span>
+                  <span><small>Iniciado</small><strong id="search-process-started">—</strong></span>
+                  <span><small>PID</small><strong id="search-process-pid">—</strong></span>
+                </div>
+                <div class="execution-progress" id="search-live-tracker" data-running="false">
+                  <div class="execution-progress-copy">
+                    <span>Andamento da coleta</span>
+                    <strong id="search-live-summary">0 cidades concluídas</strong>
+                    <small id="search-live-detail">Aguardando a próxima execução.</small>
+                  </div>
+                  <div class="execution-progress-data">
+                    <div class="execution-progress-metrics" aria-label="Dados da busca">
+                      <span><small>Faltam</small><strong id="search-live-remaining">—</strong></span>
+                      <span><small>Novos</small><strong id="search-live-new">—</strong></span>
+                      <span><small>Encontrados</small><strong id="search-live-found">—</strong></span>
+                      <span><small>Total da base</small><strong id="search-live-total-leads">—</strong></span>
+                    </div>
+                    <progress id="search-live-progress" class="execution-progress-bar" max="1" value="0">Aguardando</progress>
+                  </div>
+                </div>
+                <div class="process-console" data-console="search" data-running="false">
+                  <div class="console-bar"><span><svg><use href="#icon-terminal"></use></svg>Saída da busca</span><small>atualização automática</small></div>
+                  <pre id="search-process-log" tabindex="0">A execução ainda não foi iniciada nesta sessão do painel.</pre>
+                </div>
+              </section>
+              <section class="module-feature search-feature">
+                <div class="module-emblem"><svg><use href="#icon-search"></use></svg></div>
+                <div><span>Script responsável</span><h3>buscar_leads.py</h3><p>Procura empresas por cidade e categoria, evita duplicados e prepara a planilha usada pela prospecção.</p></div>
+              </section>
+              <section class="panel operation-stats">
+                <div><span>Cidades concluídas</span><strong id="search-city-count">—</strong></div>
+                <div><span>Última cidade</span><strong id="search-last-city">—</strong></div>
+                <div><span>Atualizado</span><strong id="search-updated">—</strong></div>
+              </section>
+              <section class="panel script-settings-panel search-settings-panel" aria-labelledby="search-settings-title">
+                <div class="settings-heading">
+                  <div><span>Configuração da próxima execução</span><h3 id="search-settings-title">Cidades e categorias adicionais</h3></div>
+                  <p>A lista original do script continua preservada. O que for incluído aqui será acrescentado à busca.</p>
+                </div>
+                <form id="search-settings-form">
+                  <fieldset id="search-settings-fieldset">
+                    <section class="settings-group" aria-labelledby="locality-settings-title">
+                      <div class="settings-group-title"><div><h4 id="locality-settings-title">Nova cidade ou localidade</h4><p>Use o formato reconhecido pelo mapa, como “Braga, Distrito de Braga, Portugal”.</p></div></div>
+                      <div class="settings-composer locality-composer">
+                        <label><span>País</span><select id="search-market"></select></label>
+                        <div class="locality-field">
+                          <label for="search-locality">Cidade ou localidade</label>
+                          <div class="locality-input-shell">
+                            <input id="search-locality" maxlength="140" placeholder="Comece a digitar, como sal ou bra" autocomplete="off" role="combobox" aria-autocomplete="list" aria-controls="search-locality-suggestions" aria-expanded="false">
+                            <div id="search-locality-suggestions" class="locality-suggestions" role="listbox" aria-label="Sugestões de cidades" hidden></div>
+                          </div>
+                        </div>
+                        <button id="add-search-locality" class="button button-secondary" type="button">Adicionar</button>
+                      </div>
+                      <div id="search-locality-list" class="settings-list" aria-live="polite"></div>
+                    </section>
+                    <section class="settings-group" aria-labelledby="category-settings-title">
+                      <div class="settings-group-title"><div><h4 id="category-settings-title">Nova categoria</h4><p>Pesquise pelo tipo de negócio e selecione uma sugestão para preencher as tags do OpenStreetMap.</p></div></div>
+                      <div class="settings-composer category-composer">
+                        <div class="category-search-field">
+                          <label for="search-category-name">Nome exibido</label>
+                          <div class="category-input-shell">
+                            <input id="search-category-name" maxlength="70" placeholder="Comece a digitar, como hot ou pad" autocomplete="off" role="combobox" aria-autocomplete="list" aria-controls="search-category-suggestions" aria-expanded="false">
+                            <div id="search-category-suggestions" class="category-suggestions" role="listbox" aria-label="Sugestões de categorias" hidden></div>
+                          </div>
+                        </div>
+                        <details class="ploa-category-advanced">
+                          <summary>Ajustes avançados da categoria</summary>
+                          <div class="ploa-form-grid">
+                            <label><span>Chave OSM</span><input id="search-category-key" maxlength="70" placeholder="Ex.: tourism"></label>
+                            <label><span>Valor OSM</span><input id="search-category-value" maxlength="90" placeholder="Ex.: hotel"></label>
+                          </div>
+                        </details>
+                        <button id="add-search-category" class="button button-secondary" type="button">Adicionar</button>
+                      </div>
+                      <div id="search-category-list" class="settings-list" aria-live="polite"></div>
+                    </section>
+                    <div class="settings-footer">
+                      <p id="search-settings-status" role="status">As alterações entram na próxima busca.</p>
+                      <button class="button button-primary" type="submit">Salvar configurações</button>
+                    </div>
+                  </fieldset>
+                </form>
+              </section>
+            </div>
+          </section>
+
+          <section class="view-panel" data-view-panel="messages" aria-labelledby="messages-module-title" hidden>
+            <div class="page-intro">
+              <div><p>Operação e atendimento</p><h2 id="messages-module-title">Mensagens</h2><span>Execute os envios, configure os intervalos e acompanhe o andamento.</span></div>
+            </div>
+            <div class="module-layout">
+              <section class="panel process-control message-process-control execution-first" data-process-panel="messages">
+                <div class="process-control-head">
+                  <div><h3>Disparos de prospecção</h3><p>A fila usa a conexão contínua. Ao terminar os disparos, o atendimento permanece disponível.</p></div>
+                  <div class="process-actions">
+                    <button class="button button-run" type="button" data-process-start="messages"><svg><use href="#icon-play"></use></svg>Iniciar disparos</button>
+                    <button class="button button-stop" type="button" data-process-stop="messages" disabled><svg><use href="#icon-stop"></use></svg>Encerrar</button>
+                  </div>
+                </div>
+                <div class="process-meta" aria-label="Estado da execução">
+                  <span><small>Processo</small><strong id="messages-process-status">Aguardando</strong></span>
+                  <span><small>Iniciado</small><strong id="messages-process-started">—</strong></span>
+                  <span><small>PID</small><strong id="messages-process-pid">—</strong></span>
+                </div>
+                <div class="execution-progress" id="messages-live-tracker" data-running="false">
+                  <div class="execution-progress-copy">
+                    <span>Nesta execução</span>
+                    <strong><b id="messages-live-current">0</b> de <b id="messages-live-target">0</b> mensagens</strong>
+                    <small id="messages-live-detail">Carregando o progresso registrado…</small>
+                  </div>
+                  <div class="execution-progress-data">
+                    <div class="execution-progress-metrics message-execution-metrics" aria-label="Dados dos envios">
+                      <span><small>Faltam</small><strong id="messages-live-remaining">—</strong></span>
+                      <span><small>Processados</small><strong id="messages-live-processed">—</strong></span>
+                      <span><small>Estado</small><strong id="messages-live-status">Aguardando</strong></span>
+                    </div>
+                    <progress id="messages-live-progress" class="execution-progress-bar" max="1" value="0">0%</progress>
+                  </div>
+                </div>
+                <div class="process-console" data-console="messages" data-running="false">
+                  <p id="messages-result-summary" class="ploa-execution-results" role="status">O resumo de resultados estará disponível nas novas execuções.</p>
+                  <div class="console-bar"><span><svg><use href="#icon-terminal"></use></svg>Registros dos disparos</span><small>A conexão fica no atendimento contínuo</small></div>
+                  <section id="messages-qr-panel" class="console-qr-panel" aria-live="polite" hidden>
+                    <div class="console-qr-copy"><strong>QR Code pronto para leitura</strong><span>Abra o WhatsApp no celular, acesse Aparelhos conectados e aponte a câmera para o código completo.</span></div>
+                    <pre id="messages-qr-code" aria-label="QR Code de conexão do WhatsApp"></pre>
+                  </section>
+                  <pre id="messages-process-log" tabindex="0">A execução ainda não foi iniciada nesta sessão do painel.</pre>
+                </div>
+              </section>
+              <section class="module-feature message-feature">
+                <div class="module-emblem"><svg><use href="#icon-message"></use></svg></div>
+                <div><span>Script responsável</span><h3>enviar_mensagens_whatsapp.js</h3><p>Continua do último contato registrado e mantém o limite diário definido na operação.</p></div>
+              </section>
+              <section class="panel progress-panel">
+                <div class="progress-heading"><div><span>Progresso registrado</span><strong id="message-progress">—</strong></div><span id="message-updated">—</span></div>
+                <progress id="message-progress-bar" class="progress-track" max="100" value="0">0%</progress>
+                <div class="progress-breakdown"><span><strong id="message-index">—</strong> processados</span><span><strong id="message-total">—</strong> contatos no último lote</span><span><strong id="message-today">—</strong> enviados hoje</span></div>
+              </section>
+              <section class="panel script-settings-panel message-settings-panel" aria-labelledby="message-settings-title">
+                <div class="settings-heading">
+                  <div><span>Configuração da próxima execução</span><h3 id="message-settings-title">Ritmo dos novos contatos</h3></div>
+                  <p>O script sorteia um tempo entre o mínimo e o máximo antes de cada contato novo.</p>
+                </div>
+                <form id="message-settings-form">
+                  <fieldset id="message-settings-fieldset">
+                    <div class="message-settings-grid">
+                      <label><span>Atraso mínimo (segundos)</span><input id="message-delay-min" type="number" min="20" max="3600" step="1" inputmode="numeric"></label>
+                      <label><span>Atraso máximo (segundos)</span><input id="message-delay-max" type="number" min="20" max="3600" step="1" inputmode="numeric"></label>
+                      <label><span>Limite diário de novos contatos</span><input id="message-daily-limit" type="number" min="1" max="100" step="1" inputmode="numeric"></label>
+                    </div>
+                    <div class="settings-footer">
+                      <p id="message-settings-status" role="status">Respostas automáticas continuam fora deste limite.</p>
+                      <button class="button button-primary" type="submit">Salvar configurações</button>
+                    </div>
+                  </fieldset>
+                </form>
+              </section>
+              <section class="panel copy-editor-panel" aria-labelledby="copy-editor-title">
+                <div class="settings-heading copy-editor-heading">
+                  <div><span>Biblioteca utilizada pelo script</span><h3 id="copy-editor-title">Copys cadastradas</h3></div>
+                  <p>Consulte e edite as mensagens do país e da categoria escolhidos. Novas categorias têm uma área própria abaixo.</p>
+                </div>
+                <fieldset id="copy-filter-fieldset" aria-label="Consultar copys por grupo">
+                  <div class="copy-filter-grid" aria-label="Filtros das copys">
+                    <label><span>Tipo de mensagem</span><select id="copy-type"><option value="firstContact">Primeiro contato</option><option value="automaticReplies">Resposta automática</option></select></label>
+                    <label><span>País</span><select id="copy-market"></select></label>
+                    <label><span>Categoria com copys</span><select id="copy-category"></select></label>
+                  </div>
+                </fieldset>
+                <fieldset id="copy-editor-fieldset">
+                  <div class="copy-editor-context">
+                    <div><span id="copy-context-label">Primeiro contato</span><strong id="copy-context-title">Selecione um grupo</strong></div>
+                    <p id="copy-context-description">As variáveis {nome} e {categoria} continuam disponíveis.</p>
+                    <span id="copy-count" class="copy-count">0 copys</span>
+                  </div>
+                  <div id="copy-list" class="copy-list" aria-live="polite"></div>
+                  <form id="copy-item-form" class="copy-item-form">
+                    <input id="copy-edit-index" type="hidden" value="">
+                    <label for="copy-text"><span id="copy-form-label">Adicionar variação a este grupo</span><textarea id="copy-text" rows="5" maxlength="2500" placeholder="Escreva outra mensagem para o grupo selecionado. Você pode usar {nome} e {categoria}."></textarea></label>
+                    <div class="copy-form-actions">
+                      <button id="cancel-copy-edit" class="button button-quiet" type="button" hidden>Cancelar edição</button>
+                      <button id="submit-copy-item" class="button button-secondary" type="submit">Adicionar copy</button>
+                    </div>
+                  </form>
+                  <section id="copy-category-create" class="copy-category-create" aria-labelledby="copy-category-create-title">
+                    <div class="settings-heading">
+                      <div><h4 id="copy-category-create-title">Criar copys para uma categoria da busca</h4><p id="copy-category-create-description">Escolha uma categoria adicionada e salva em Buscar leads para cadastrar sua primeira mensagem.</p></div>
+                    </div>
+                    <p id="copy-category-create-status" class="ploa-note" role="status"></p>
+                    <form id="copy-category-create-form" class="copy-category-create-form">
+                      <label><span>Categoria da busca sem copys neste país</span><select id="copy-new-category"></select></label>
+                      <label for="copy-new-text"><span>Primeira copy da categoria</span><textarea id="copy-new-text" rows="4" maxlength="2500" placeholder="Escreva a primeira mensagem para esta categoria. Variáveis disponíveis: {nome} e {categoria}."></textarea></label>
+                      <div class="copy-form-actions">
+                        <button id="copy-open-search" class="button button-quiet" type="button">Adicionar categoria em Buscar leads</button>
+                        <button id="copy-create-category" class="button button-secondary" type="submit">Adicionar categoria e primeira copy</button>
+                      </div>
+                    </form>
+                  </section>
+                  <div class="settings-footer copy-editor-footer">
+                    <p id="copy-settings-status" role="status">Carregando a biblioteca de copys…</p>
+                    <div class="copy-save-actions">
+                      <button id="discard-copy-settings" class="button button-quiet" type="button" disabled>Descartar alterações</button>
+                      <button id="save-copy-settings" class="button button-primary" type="button" disabled>Salvar alterações da biblioteca</button>
+                    </div>
+                  </div>
+                </fieldset>
+              </section>
+            </div>
+          </section>
+
+          <section class="view-panel" data-view-panel="ai" aria-labelledby="ai-page-title" hidden>
+            <div class="page-intro"><div><p>Atendimento</p><h2 id="ai-page-title">IA</h2><span>Conecte o WhatsApp e configure como a IA conduz as conversas.</span></div></div>
+            <div id="ai-history-anchor"></div>
+          </section>
+
+          <section class="view-panel" data-view-panel="copies" aria-labelledby="copies-page-title" hidden>
+            <div class="page-intro"><div><p>Biblioteca de mensagens</p><h2 id="copies-page-title">Copys</h2><span>Edite o primeiro contato e as respostas automáticas por país e categoria.</span></div></div>
+          </section>
+
+          <section class="view-panel" data-view-panel="ads" aria-labelledby="ads-module-title" hidden>
+            <div class="page-intro"><div><h2 id="ads-module-title">Catálogo de criativos</h2><span>Explore anúncios, compare os sinais disponíveis e modele uma versão para o seu negócio.</span></div></div>
+            <div id="creative-miner-root"></div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <div id="mobile-backdrop" class="mobile-backdrop" hidden></div>
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+    <dialog id="messages-confirm-dialog" class="modal-dialog confirm-dialog" aria-labelledby="messages-confirm-title">
+      <form method="dialog">
+        <span class="dialog-signal"><svg><use href="#icon-message"></use></svg></span>
+        <h2 id="messages-confirm-title">Iniciar disparos de prospecção?</h2>
+        <p>A fila usará a conexão contínua do WhatsApp, seguindo o limite diário, os intervalos e o progresso configurados. O atendimento permanece ligado quando a fila terminar.</p>
+        <div class="dialog-actions">
+          <button class="button button-secondary" value="cancel">Cancelar</button>
+          <button id="confirm-message-start" class="button button-run" value="confirm">Iniciar agora</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="ad-detail-dialog" class="modal-dialog ad-detail-dialog" aria-labelledby="ad-detail-title">
+      <form method="dialog">
+        <div class="ad-dialog-head">
+          <div><span id="ad-detail-niche">Nicho</span><h2 id="ad-detail-title">Detalhes do anúncio</h2><p id="ad-detail-advertiser"></p></div>
+          <button class="icon-button dialog-close" value="cancel" aria-label="Fechar detalhes">×</button>
+        </div>
+        <div class="ad-dialog-score"><span>Sinal de escala</span><strong id="ad-detail-score">0</strong><small id="ad-detail-level">Baixo sinal</small></div>
+        <dl class="ad-dialog-signals">
+          <div><dt>Dias ativo</dt><dd id="ad-detail-days">0</dd></div>
+          <div><dt>Variações</dt><dd id="ad-detail-variants">0</dd></div>
+          <div><dt>Posicionamentos</dt><dd id="ad-detail-placements">0</dd></div>
+          <div><dt>Recorrências</dt><dd id="ad-detail-sightings">0</dd></div>
+        </dl>
+        <div class="ad-dialog-copy"><section><h3>Gancho observado</h3><p id="ad-detail-hook">Sem registro.</p></section><section><h3>Oferta observada</h3><p id="ad-detail-offer">Sem registro.</p></section><section><h3>Leitura</h3><p id="ad-detail-summary">Sem registro.</p></section></div>
+        <button id="copy-ad-link" class="button button-secondary" type="button"><svg><use href="#icon-copy"></use></svg>Copiar link da referência</button>
+      </form>
+    </dialog>
+  </body>
+</html>
+
+
+

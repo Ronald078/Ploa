@@ -1,0 +1,148 @@
+{
+  "markets": {
+    "Brasil": {
+      "ativo": true,
+      "ativar_quando_houver_copys": false,
+      "iso": "BR",
+      "ddi": "55",
+      "idioma": "pt-BR",
+      "cidades": [
+        "Salvador, Bahia, Brasil",
+        "Feira de Santana, Bahia, Brasil",
+        "São Paulo, São Paulo, Brasil",
+        "Rio de Janeiro, Rio de Janeiro, Brasil",
+        "Belo Horizonte, Minas Gerais, Brasil",
+        "Brasília, Distrito Federal, Brasil",
+        "Curitiba, Paraná, Brasil",
+        "Recife, Pernambuco, Brasil",
+        "Fortaleza, Ceará, Brasil",
+        "Porto Alegre, Rio Grande do Sul, Brasil",
+        "Goiânia, Goiás, Brasil",
+        "Campinas, São Paulo, Brasil",
+        "Ribeirão Preto, São Paulo, Brasil",
+        "Uberlândia, Minas Gerais, Brasil",
+        "Joinville, Santa Catarina, Brasil",
+        "Florianópolis, Santa Catarina, Brasil",
+        "João Pessoa, Paraíba, Brasil",
+        "Londrina, Paraná, Brasil",
+        "São José dos Campos, São Paulo, Brasil",
+        "Maringá, Paraná, Brasil"
+      ]
+    },
+    "Portugal": {
+      "ativo": true,
+      "ativar_quando_houver_copys": false,
+      "iso": "PT",
+      "ddi": "351",
+      "idioma": "pt-PT",
+      "cidades": [
+        "Lisboa, Distrito de Lisboa, Portugal",
+        "Porto, Distrito do Porto, Portugal"
+      ]
+    },
+    "Estados Unidos": {
+      "ativo": false,
+      "ativar_quando_houver_copys": true,
+      "iso": "US",
+      "ddi": "1",
+      "idioma": "en-US",
+      "cidades": [
+        "Miami, Florida, United States",
+        "New York City, New York, United States"
+      ]
+    },
+    "Espanha": {
+      "ativo": false,
+      "ativar_quando_houver_copys": true,
+      "iso": "ES",
+      "ddi": "34",
+      "idioma": "es-ES",
+      "cidades": [
+        "Madrid, Comunidad de Madrid, España",
+        "Barcelona, Cataluña, España"
+      ]
+    }
+  },
+  "categories": {
+    "Restaurante": [
+      [
+        [
+          "amenity",
+          "restaurant"
+        ]
+      ],
+      [
+        [
+          "amenity",
+          "fast_food"
+        ]
+      ]
+    ],
+    "Barbearia": [
+      [
+        [
+          "shop",
+          "hairdresser"
+        ],
+        [
+          "hairdresser",
+          "barber"
+        ]
+      ]
+    ],
+    "Salão de beleza": [
+      [
+        [
+          "shop",
+          "hairdresser"
+        ]
+      ]
+    ],
+    "Clínica de estética": [
+      [
+        [
+          "shop",
+          "beauty"
+        ]
+      ]
+    ],
+    "Loja de roupa": [
+      [
+        [
+          "shop",
+          "clothes"
+        ]
+      ]
+    ],
+    "Pet shop": [
+      [
+        [
+          "shop",
+          "pet"
+        ]
+      ]
+    ],
+    "Academia": [
+      [
+        [
+          "leisure",
+          "fitness_centre"
+        ]
+      ]
+    ],
+    "Clínica odontológica": [
+      [
+        [
+          "amenity",
+          "dentist"
+        ]
+      ],
+      [
+        [
+          "healthcare",
+          "dentist"
+        ]
+      ]
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+# Dependências e builds locais
+node_modules/
+.python-deps/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+output/
+dist/
+crm/public/app-next/
+crm/cloud/public/
+crm/tools/tessdata/*.traineddata
+
+# Credenciais e estado privado desta instalação
+.env
+.env.*
+!.env.example
+!.env.production.example
+.dev.vars*
+.wrangler/
+.credentials/
+.ploa-local/
+.wwebjs_auth/
+.wwebjs_cache/
+.playwright-cli/
+.codex-attachments/
+backups/
+teste_ia_local/
+contexto/
+.agents/
+AGENTS.md
+
+# Arquivos comerciais e de execução não são código
+/*.json
+!/package.json
+!/package-lock.json
+/crm/*.json
+!/crm/search-catalog.json
+*.jsonl
+*.bak
+*.tmp
+*.log
+*.sqlite*
+*.xlsx
+*.csv
+*.dpapi.*
+.enviando.lock

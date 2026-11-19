@@ -1,0 +1,400 @@
+/* Sexta passagem: Ploa, enquadramento estável e funil horizontal contínuo. */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.app-frame,
+.app-shell,
+main,
+.view-panel,
+.overview-hero,
+.overview-grid,
+.metric-grid,
+.panel,
+.funnel-dashboard,
+.workspace,
+.lead-ledger,
+.lead-inspector {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.app-frame { width: min(1560px, 100%); }
+.app-shell { width: 100%; overflow: clip; }
+main { width: 100%; overflow: clip; }
+
+.brand-logo {
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  object-fit: contain;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  filter: drop-shadow(0 8px 15px rgba(55, 162, 224, 0.2));
+}
+
+.product-name {
+  color: #f7fbff;
+  font-size: 1rem;
+  font-weight: 680;
+  letter-spacing: -0.025em;
+}
+
+.overview-hero,
+.page-intro {
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: clamp(24px, 4vw, 60px);
+}
+
+.command-copy,
+.page-intro > div,
+.panel-heading > div { min-width: 0; }
+
+.command-copy h2,
+.command-summary,
+.page-intro h2,
+.page-intro > div > span,
+.panel-heading h3,
+.panel-heading p {
+  overflow-wrap: anywhere;
+}
+
+.panel-heading {
+  gap: 18px;
+  justify-content: space-between;
+}
+
+.panel-heading > .text-action,
+.panel-total { flex: 0 0 auto; }
+
+.executive-metrics { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.overview-commerce-grid { grid-template-columns: minmax(0, 1.55fr) minmax(260px, 0.72fr); }
+
+.funnel-preview,
+.funnel-chart {
+  display: block !important;
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  margin-top: 18px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.funnel-chart::after { display: none !important; }
+
+.connected-funnel {
+  position: relative;
+  width: 100%;
+  height: 356px;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(70, 149, 204, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(70, 149, 204, 0.055) 1px, transparent 1px),
+    radial-gradient(circle at 18% 50%, rgba(28, 171, 245, 0.11), transparent 28rem),
+    #03080d;
+  background-size: 34px 34px, 34px 34px, auto, auto;
+  border: 1px solid rgba(97, 180, 232, 0.16);
+  border-radius: 14px;
+}
+
+.connected-funnel-compact { height: 188px; }
+
+.connected-funnel-shape {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 0 18px rgba(32, 170, 236, 0.18));
+}
+
+.connected-funnel-segment {
+  stroke: rgba(105, 211, 255, 0.68);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.connected-funnel-segment + .connected-funnel-segment {
+  stroke: rgba(117, 201, 242, 0.52);
+}
+
+.connected-funnel-outline {
+  fill: none;
+  stroke: rgba(163, 227, 255, 0.82);
+  stroke-width: 1.35;
+  vector-effect: non-scaling-stroke;
+}
+
+.connected-funnel-labels {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding-inline: 1.8%;
+}
+
+.connected-funnel-stage {
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  min-width: 0;
+  padding: 22px clamp(12px, 1.6vw, 25px);
+  color: #eef9ff;
+  text-align: left;
+  background: transparent;
+  border: 0;
+}
+
+.connected-funnel-stage:hover,
+.connected-funnel-stage:focus-visible {
+  background: linear-gradient(90deg, rgba(103, 210, 255, 0.08), transparent);
+}
+
+.connected-funnel-index {
+  color: #94dcff;
+  font-size: 0.64rem;
+  font-weight: 780;
+}
+
+.connected-funnel-label {
+  width: 100%;
+  margin-top: 8px;
+  overflow: hidden;
+  color: #d9f1ff;
+  font-size: clamp(0.68rem, 0.82vw, 0.82rem);
+  font-weight: 610;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.connected-funnel-count {
+  margin-top: 8px;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 2.3vw, 2.5rem);
+  font-weight: 650;
+  line-height: 1;
+}
+
+.connected-funnel-rate {
+  width: 100%;
+  margin-top: 8px;
+  overflow: hidden;
+  color: #a9d9f2;
+  font-size: clamp(0.54rem, 0.68vw, 0.66rem);
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.connected-funnel-compact .connected-funnel-stage { padding-block: 13px; }
+.connected-funnel-compact .connected-funnel-label { margin-top: 5px; font-size: 0.66rem; }
+.connected-funnel-compact .connected-funnel-count { margin-top: 5px; font-size: clamp(1.15rem, 1.8vw, 1.8rem); }
+.connected-funnel-compact .connected-funnel-rate { margin-top: 5px; }
+
+.funnel-operation-panel {
+  margin-top: 14px;
+  padding: 25px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 88% 5%, rgba(46, 152, 215, 0.08), transparent 22rem),
+    #060a0f;
+}
+
+.funnel-operation {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.operation-stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 350px;
+  padding: 18px;
+  overflow: hidden;
+  background: linear-gradient(160deg, rgba(13, 26, 39, 0.98), rgba(5, 10, 16, 0.98));
+  border: 1px solid rgba(111, 175, 215, 0.18);
+  border-radius: 13px;
+}
+
+.operation-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 2px;
+  background: linear-gradient(90deg, #2aaaf0, rgba(151, 219, 255, 0.12));
+}
+
+.operation-stage-head {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 10px;
+}
+
+.operation-stage-number {
+  display: grid;
+  width: 27px;
+  height: 27px;
+  place-items: center;
+  color: #a7dfff;
+  background: rgba(45, 166, 226, 0.1);
+  border: 1px solid rgba(86, 190, 242, 0.24);
+  border-radius: 8px;
+  font-size: 0.58rem;
+  font-weight: 760;
+}
+
+.operation-stage-title { min-width: 0; }
+.operation-stage-title h4 { margin: 0; color: #f3f9fd; font-size: 0.82rem; line-height: 1.25; overflow-wrap: anywhere; }
+.operation-stage-title span { display: block; margin-top: 4px; color: #7890a2; font-size: 0.58rem; overflow-wrap: anywhere; }
+.operation-stage-count { color: #c9edff; font-size: 1.25rem; line-height: 1; }
+
+.operation-stage-description,
+.operation-stage-advance {
+  margin: 17px 0 0;
+  color: #9cabb7;
+  font-size: 0.66rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.operation-stage-advance {
+  margin-top: 10px;
+  color: #c3d4df;
+}
+
+.operation-stage-copy {
+  display: -webkit-box;
+  margin: 16px 0 0;
+  padding: 12px;
+  overflow: hidden;
+  color: #9bb9ca;
+  background: rgba(2, 7, 11, 0.68);
+  border: 1px solid rgba(106, 157, 192, 0.14);
+  border-radius: 9px;
+  font-size: 0.61rem;
+  line-height: 1.48;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+
+.operation-stage-action {
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 12px 0 0;
+  color: #8ed7fb;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(74, 182, 237, 0.35);
+  font-size: 0.63rem;
+  font-weight: 680;
+}
+
+.funnel-copy-support {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 12px;
+  padding: 16px 18px;
+  background: #05080c;
+  border: 1px solid rgba(111, 150, 181, 0.16);
+  border-radius: 11px;
+}
+
+.funnel-copy-support-text { min-width: 0; }
+.funnel-copy-support-text span { display: block; color: #6f8799; font-size: 0.59rem; }
+.funnel-copy-support-text strong { display: block; margin-top: 4px; color: #dcebf4; font-size: 0.78rem; }
+.funnel-copy-support-text p { max-width: 760px; margin: 5px 0 0; color: #7d8b96; font-size: 0.63rem; line-height: 1.45; }
+.funnel-copy-support .button { flex: 0 0 auto; }
+
+.workspace {
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 390px);
+  width: 100%;
+}
+
+.ledger-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) minmax(185px, 0.78fr);
+  flex: 1 1 430px;
+  min-width: 0;
+}
+
+.search-field { width: auto; min-width: 0; }
+.ledger-head,
+.lead-row { grid-template-columns: minmax(150px, 1.35fr) minmax(115px, 0.78fr) minmax(145px, 1fr) minmax(105px, 0.72fr); }
+.lead-row > *,
+.ledger-head > * { min-width: 0; }
+.status-chip { max-width: 100%; }
+
+@media (max-width: 1380px) {
+  .executive-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .overview-commerce-grid { grid-template-columns: 1fr; }
+  .funnel-operation { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .operation-stage { min-height: 310px; }
+  .workspace { display: block; min-height: 0; }
+  .lead-inspector { min-height: 420px; border-top: 1px solid var(--line); border-left: 0; }
+  .lead-list { max-height: 520px; }
+}
+
+@media (max-width: 980px) {
+  .overview-hero,
+  .page-intro { grid-template-columns: minmax(0, 1fr); }
+  .response-visual,
+  .daily-signal { justify-self: start; }
+  .connected-funnel { height: 328px; }
+  .connected-funnel-compact { height: 180px; }
+  .connected-funnel-rate { white-space: normal; }
+  .ledger-head,
+  .lead-row { grid-template-columns: minmax(150px, 1.25fr) minmax(115px, 0.78fr) minmax(145px, 1fr); }
+  .ledger-head > :last-child,
+  .lead-activity { display: none; }
+}
+
+@media (max-width: 760px) {
+  .funnel-operation,
+  .executive-metrics { grid-template-columns: 1fr; }
+  .operation-stage { min-height: 0; }
+  .funnel-copy-support { align-items: stretch; flex-direction: column; }
+  .funnel-copy-support .button { width: 100%; }
+  .connected-funnel-shape { display: none; }
+  .connected-funnel,
+  .connected-funnel-compact { height: auto; padding: 10px; }
+  .connected-funnel-labels { position: static; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; padding: 0; }
+  .connected-funnel-stage {
+    min-height: 128px;
+    padding: 15px;
+    background: linear-gradient(145deg, #0b5f8d, #082b42);
+    border: 1px solid rgba(111, 208, 252, 0.26);
+    border-radius: 10px;
+  }
+  .filters { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 520px) {
+  .connected-funnel-labels { grid-template-columns: 1fr; }
+  .connected-funnel-stage { min-height: 108px; }
+  .panel-heading { align-items: flex-start; }
+  .panel-heading > .text-action,
+  .panel-total { flex: 1 1 auto; }
+}
+

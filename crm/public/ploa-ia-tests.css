@@ -1,0 +1,41 @@
+.ploa-ai-tabs { display:flex; gap:8px; margin:0 0 22px; width:fit-content; max-width:100%; }
+.ploa-ai-tab { min-height:46px; min-width:150px; padding:11px 24px; background:#091522; border:1px solid #29435b; color:#b6c8d9; }
+.ploa-ai-tab[aria-selected="true"] { color:#f0f6ff; background:#183853; border-color:#78baff; }
+.ploa-test-panel { min-width:0; display:grid; gap:18px; }
+.ploa-test-heading { display:flex; align-items:start; justify-content:space-between; gap:20px; }
+.ploa-test-heading h3 { margin:0 0 7px; font-size:1.2rem; color:#f1f3f6; }
+.ploa-test-heading p { margin:0; max-width:65ch; }
+.ploa-test-heading .text-action { flex-shrink:0; align-self:start; }
+.ploa-test-control { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:20px; padding:22px; border:1px solid #29435b; border-radius:14px; background:linear-gradient(115deg,#102b40,#071019); }
+.ploa-test-identity { display:flex; align-items:center; gap:14px; min-width:0; }
+.ploa-test-identity strong { display:block; font-size:1rem; color:#f1f3f6; overflow-wrap:anywhere; }
+.ploa-test-identity span:not(.ploa-test-dot) { display:block; margin-top:5px; color:#b4c4d3; font-size:.82rem; }
+.ploa-test-dot { width:11px; height:11px; border-radius:50%; background:#8e9eac; flex:0 0 auto; }
+.ploa-test-dot[data-running="true"] { background:#78dcb1; box-shadow:0 0 0 5px #78dcb116; }
+.ploa-test-actions { display:flex; flex-wrap:wrap; gap:10px; }
+.ploa-test-actions .button { min-height:44px; }
+.ploa-test-status { margin:0; color:#d7eafb; font-size:.94rem; font-weight:600; }
+.ploa-test-panel > .ploa-note { margin:-10px 0 0; line-height:1.65; }
+.ploa-test-warning { padding:15px 18px; background:#17283a; border-radius:10px; color:#dfebf8; line-height:1.65; font-size:.9rem; overflow-wrap:anywhere; }
+.ploa-test-metrics { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin:2px 0; }
+.ploa-test-metrics > div { padding:18px; border-radius:12px; background:#0b1a27; min-width:0; }
+.ploa-test-metrics dt { color:#aebfce; font-size:.8rem; line-height:1.4; }
+.ploa-test-metrics dd { margin:10px 0 0; color:#e7f2ff; font-size:1.35rem; font-weight:650; line-height:1.3; overflow-wrap:anywhere; }
+.ploa-test-metrics > div:last-child dd { font-size:.98rem; }
+.ploa-test-grid { display:grid; grid-template-columns:minmax(0,1.35fr) minmax(270px,.8fr); gap:18px; }
+.ploa-test-conversation, .ploa-test-activity { min-width:0; border:1px solid #29435b; border-radius:14px; background:#071019; overflow:hidden; }
+.ploa-test-subheading { padding:20px 22px 10px; }
+.ploa-test-subheading h3 { margin:0 0 6px; font-size:1rem; color:#e8f2fc; }
+.ploa-test-messages { display:flex; flex-direction:column; gap:14px; max-height:620px; min-height:280px; overflow-y:auto; overflow-x:hidden; padding:16px 22px 22px; scrollbar-gutter:stable; }
+.ploa-test-bubble { align-self:flex-start; width:fit-content; max-width:94%; padding:15px 17px; border-radius:13px 13px 13px 4px; background:#122332; color:#edf4fb; overflow-wrap:anywhere; }
+.ploa-test-bubble[data-direction="out"] { align-self:flex-end; border-radius:13px 13px 4px 13px; background:#204866; }
+.ploa-test-speaker { font-size:.76rem; font-weight:650; color:#c5dffa; }
+.ploa-test-bubble p { white-space:pre-wrap; margin:8px 0; line-height:1.7; font-size:.95rem; }
+.ploa-test-bubble time { color:#afc6db; font-size:.72rem; }
+.ploa-test-log { list-style:none; margin:0; padding:10px 22px 22px; display:grid; gap:18px; max-height:620px; overflow-y:auto; }
+.ploa-test-log li { display:grid; gap:6px; color:#c4d2e0; font-size:.85rem; line-height:1.65; overflow-wrap:anywhere; }
+.ploa-test-log time { color:#89b5da; font-size:.74rem; }
+.ploa-test-log li[data-kind="error"] span { color:#f2c9ce; }
+.ploa-test-empty { color:#a8bbcc; line-height:1.7; font-size:.88rem; margin:0; }
+@media(max-width:1050px) { .ploa-test-grid { grid-template-columns:minmax(0,1fr); } .ploa-test-log { max-height:300px; } .ploa-test-metrics { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:600px) { .ploa-ai-tabs { width:100%; } .ploa-ai-tab { min-width:0; flex:1; padding-inline:14px; } .ploa-test-heading { flex-direction:column; gap:12px; } .ploa-test-control { padding:18px; } .ploa-test-actions { width:100%; } .ploa-test-actions .button { flex:1 1 110px; } .ploa-test-subheading,.ploa-test-log { padding-inline:16px; } .ploa-test-messages { padding-inline:14px; } .ploa-test-bubble { max-width:100%; } }

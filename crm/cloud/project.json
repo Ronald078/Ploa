@@ -1,0 +1,10 @@
+{
+  "name": "Ploa",
+  "id": "vucwevapknncmmnumuja",
+  "organization": "Ronald",
+  "organizationId": "hltsbwuybqztnflfbpvq",
+  "region": "sa-east-1",
+  "foundationMigration": "20261102234704_ploa_workspace_foundation",
+  "emailSecurityMigrations": ["20261103002423_ploa_email_security", "20261103004238_ploa_active_session_gate", "20261103004529_ploa_email_proof_backend_only"],
+  "purpose": "Separate Ploa account foundation; no local CRM import"
+}

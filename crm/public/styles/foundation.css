@@ -1,0 +1,116 @@
+:root {
+  color-scheme: dark;
+  --black: #000000;
+  --panel: #070709;
+  --panel-soft: #0d0d12;
+  --panel-raised: #17171f;
+  --ink: #fffaf2;
+  --muted: #aaa6b2;
+  --line: #252530;
+  --line-strong: #424253;
+  --amber: #ffad42;
+  --amber-soft: #ffd8a6;
+  --blue: #54c7ff;
+  --green: #39e58c;
+  --red: #ff5d63;
+  --magenta: #ff4fd8;
+  --violet: #8b73ff;
+  --view-accent: var(--amber);
+  --shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  --sidebar-width: 236px;
+  --radius-small: 8px;
+  --radius-medium: 13px;
+  --radius-large: 20px;
+  --font-display: Bahnschrift, "Arial Narrow", sans-serif;
+  --font-body: "Segoe UI Variable", "Segoe UI", sans-serif;
+  font-family: var(--font-body);
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+  background: var(--black);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background: var(--black);
+}
+
+body[data-view="search"] { --view-accent: var(--blue); }
+body[data-view="messages"] { --view-accent: var(--green); }
+body[data-view="ads"] { --view-accent: var(--magenta); }
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 100;
+  height: 2px;
+  background: linear-gradient(90deg, var(--amber), var(--blue) 38%, var(--magenta) 70%, var(--green));
+  pointer-events: none;
+}
+
+button,
+input,
+select,
+textarea { font: inherit; }
+
+button,
+select { cursor: pointer; }
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--amber-soft);
+  outline-offset: 3px;
+}
+
+::selection {
+  color: var(--black);
+  background: var(--amber-soft);
+}
+
+.icon-library {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 120;
+  transform: translateY(-170%);
+  padding: 10px 14px;
+  color: var(--black);
+  background: var(--amber-soft);
+  border-radius: var(--radius-small);
+  font-weight: 700;
+}
+
+.skip-link:focus { transform: translateY(0); }
+
+.app-frame {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+  min-height: 100vh;
+}
+

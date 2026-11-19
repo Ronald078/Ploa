@@ -1,0 +1,33 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),os=require('node:os');
+const {createSenderPersistence}=require('../lib/sender-persistence'),{createDailySendLedger,FILE}=require('../lib/daily-send-ledger');
+function fixture(t){const parent=fs.realpathSync(os.tmpdir()),root=fs.mkdtempSync(path.join(parent,'ploa-counter-test-'));t.after(()=>{assert.equal(path.dirname(fs.realpathSync(root)),parent);assert.ok(path.basename(root).startsWith('ploa-counter-test-'));fs.rmSync(root,{recursive:true,force:true});});return root;}
+function ledger(root,options={}){const counterFile=path.join(root,'contador_diario.json');return createDailySendLedger({root,day:()=> '2026-10-31',readCounter:()=>JSON.parse(fs.readFileSync(counterFile,'utf8')),saveCounter:value=>createSenderPersistence({root}).save('contador_diario.json',value),...options});}
+test('recupera contador após EPERM com nova instância, preservando a base e sem duplicar confirmação',t=>{
+ const root=fixture(t),storage=createSenderPersistence({root});storage.save('contador_diario.json',{data:'2026-10-31',enviados:9});
+ const broken=ledger(root,{saveCounter:()=>{throw new Error('EPERM');}}),counter=broken.recover();broken.confirm('5511999990001',counter,{runId:'campanha'});assert.throws(()=>broken.apply(counter),/EPERM/);assert.equal(JSON.parse(fs.readFileSync(path.join(root,'contador_diario.json'))).enviados,9);
+ const next=ledger(root);assert.deepEqual(next.recover(),{data:'2026-10-31',enviados:10});assert.deepEqual(next.recover(),{data:'2026-10-31',enviados:10});next.confirm('5511999990001',next.recover());assert.equal(next.recover().enviados,10);assert.equal(next.campaignCount('campanha'),1);assert.equal(fs.readFileSync(path.join(root,FILE),'utf8').trim().split('\n').length,1);
+ next.confirm('5511999990002',next.recover());assert.equal(next.recover().enviados,11);
+});
+test('mudança de dia não transfere envios antigos nem zera o histórico de confirmação',t=>{
+ const root=fixture(t),storage=createSenderPersistence({root});storage.save('contador_diario.json',{data:'2026-10-30',enviados:9});const old=ledger(root,{day:()=> '2026-10-30'});old.confirm('5511999990001',old.recover());old.apply({data:'2026-10-30',enviados:9});const next=ledger(root);assert.equal(next.recover().enviados,0);assert.ok(next.has('5511999990001'));next.confirm('5511999990002',next.recover());assert.deepEqual(next.recover(),{data:'2026-10-31',enviados:1});
+});
+test('falha antes de gravar a confirmação mantém recuperação em memória sem reenviar',t=>{
+ const root=fixture(t);createSenderPersistence({root}).save('contador_diario.json',{data:'2026-10-31',enviados:9});let locked=true;const fakeFs={...fs,openSync(file,flags){if(path.basename(file)===FILE&&locked)throw Object.assign(new Error('EPERM'),{code:'EPERM'});return fs.openSync(file,flags);}};
+ const service=ledger(root,{fs:fakeFs});const count=service.recover();assert.throws(()=>service.confirm('5511999990001',count),{code:'PERSISTENCIA_JSON_GRAVACAO'});locked=false;assert.equal(service.recover().enviados,10);assert.equal(service.confirmedNumbers().length,1);
+});
+test('registro truncado ou conflitante bloqueia recuperação sem substituir os arquivos',t=>{
+ const root=fixture(t),storage=createSenderPersistence({root});storage.save('contador_diario.json',{data:'2026-10-31',enviados:9});const service=ledger(root);service.confirm('5511999990001',service.recover());const file=path.join(root,FILE),original=fs.readFileSync(file,'utf8');fs.appendFileSync(file,'{"version":');assert.throws(()=>ledger(root).recover(),{code:'PERSISTENCIA_JSON_GRAVACAO'});assert.equal(fs.readFileSync(file,'utf8'),original+'{"version":');assert.equal(JSON.parse(fs.readFileSync(path.join(root,'contador_diario.json'))).enviados,9);
+ fs.writeFileSync(file,original+JSON.stringify({...JSON.parse(original),total:99})+'\n');assert.throws(()=>ledger(root).recover(),/conflitantes/);
+});
+test('renomeação transitória tenta novamente; persistente preserva principal, backup e temporários limpos',t=>{
+ const root=fixture(t);createSenderPersistence({root}).save('contador_diario.json',{data:'2026-10-31',enviados:9});let failures=2;const waits=[],fakeFs={...fs,renameSync(from,to){if(path.basename(to)==='contador_diario.json'&&failures-->0)throw Object.assign(new Error('EPERM'),{code:'EPERM'});return fs.renameSync(from,to);}};const service=createSenderPersistence({root,fs:fakeFs,wait:ms=>waits.push(ms)});service.save('contador_diario.json',{data:'2026-10-31',enviados:10});assert.deepEqual(waits,[40,80]);failures=10;assert.throws(()=>service.save('contador_diario.json',{data:'2026-10-31',enviados:11}),{code:'PERSISTENCIA_JSON_GRAVACAO'});assert.equal(JSON.parse(fs.readFileSync(path.join(root,'contador_diario.json'))).enviados,10);assert.equal(JSON.parse(fs.readFileSync(path.join(root,'contador_diario.json.bak'))).enviados,10);assert.equal(fs.readdirSync(root).some(name=>name.endsWith('.tmp')),false);
+});
+test('resolve somente o alerta do arquivo que foi salvo e preserva o erro histórico',t=>{
+ const root=fixture(t),service=createSenderPersistence({root});service.alert({arquivo:'contador_diario.json',message:'Falha original'});service.save('leads.json',{});assert.equal(service.readAlert().status,'aguardando recuperação');service.save('contador_diario.json',{data:'2026-10-31',enviados:9});const alert=service.readAlert();assert.equal(alert.status,'resolvido');assert.equal(alert.proximaTentativaEmSegundos,null);assert.equal(alert.falhaAnterior.erro,'Falha original');
+ service.alert({arquivo:'outro.json',message:'Outro arquivo'});service.save('contador_diario.json',{data:'2026-10-31',enviados:10});assert.equal(service.readAlert().status,'aguardando recuperação');
+});
+test('manutenção resolve alerta antigo apenas com principal e backup posteriores e iguais, sem regravar contador',t=>{
+ const root=fixture(t),service=createSenderPersistence({root,now:()=> '2026-10-30T15:12:23.928Z'});service.save('contador_diario.json',{data:'2026-10-31',enviados:9});service.alert({arquivo:'contador_diario.json',message:'EPERM antigo'});const file=path.join(root,'contador_diario.json'),before=fs.readFileSync(file,'utf8'),modified=fs.statSync(file).mtimeMs;assert.equal(service.resolveHistoricalCounter().resolved,true);assert.equal(fs.readFileSync(file,'utf8'),before);assert.equal(fs.statSync(file).mtimeMs,modified);
+ service.alert({arquivo:'contador_diario.json',message:'Antigo'});fs.writeFileSync(file+'.bak',JSON.stringify({data:'2026-10-31',enviados:8}));assert.throws(()=>service.resolveHistoricalCounter(),/iguais/);assert.equal(service.readAlert().status,'aguardando recuperação');
+});
