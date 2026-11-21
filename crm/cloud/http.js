@@ -61,9 +61,11 @@ function createCloudHandler({ origin, gateway, publicRoot = path.join(__dirname,
     res.setHeader('Referrer-Policy', 'no-referrer');
     if(secureCookies)res.setHeader('Strict-Transport-Security','max-age=15552000');
     res.setHeader('Content-Security-Policy', "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");
+    let url;
     try {
       if (req.headers.host !== expectedHost) throw new CloudError(403, 'host', 'Endereço de acesso inválido.');
-      const url = new URL(req.url, origin);
+      try { url = new URL(req.url, origin); }
+      catch { throw new CloudError(400, 'url', 'Endereço de solicitação inválido.'); }
       if(req.method==='GET'&&url.pathname==='/healthz')return json(res,200,{ok:true});
       if(req.method==='GET'&&url.pathname==='/api/cloud/desktop-manifest'&&!localPanel&&runtime?.desktopState)return json(res,200,{application:'Ploa',protocol:1,localScripts:true});
       if (!['GET','HEAD'].includes(req.method) && req.headers.origin !== origin) throw new CloudError(403, 'origin', 'Abra esta página novamente para continuar.');
@@ -102,8 +104,8 @@ function createCloudHandler({ origin, gateway, publicRoot = path.join(__dirname,
       res.end(bytes);
     } catch (error) {
       if(res.headersSent){res.destroy();return;}
-      const pathname=new URL(req.url,origin).pathname;
-      if(panel&&req.method==='GET'&&localRoutes.isPanelPath(pathname)&&!pathname.startsWith('/api/')&&[401,409].includes(error.status)){
+      const pathname=url?.pathname;
+      if(panel&&pathname&&req.method==='GET'&&localRoutes.isPanelPath(pathname)&&!pathname.startsWith('/api/')&&[401,409].includes(error.status)){
         res.writeHead(302,{Location:'/'});res.end();return;
       }
       // Never serialize upstream errors, request bodies, passwords or provider tokens.

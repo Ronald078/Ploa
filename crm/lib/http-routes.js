@@ -49,7 +49,9 @@ function createRequestHandler({
   if (!new Set([HOST + ':' + PORT, 'localhost:' + PORT]).has(String(request.headers.host || '').toLowerCase())) {
     sendJson(response,403,{erro:'O painel aceita somente o endereço local configurado.'}); return;
   }
-  const requestUrl = new URL(request.url, `http://${HOST}:${PORT}`);
+  let requestUrl;
+  try { requestUrl = new URL(request.url, `http://${HOST}:${PORT}`); }
+  catch { sendJson(response,400,{erro:'Endereço de solicitação inválido.'}); return; }
   const pathname = requestUrl.pathname;
 
   try {
@@ -207,7 +209,15 @@ function createRequestHandler({
       return;
     }
     if (request.method === 'GET' && pathname === '/api/operations') {
-      sendJson(response, 200, await getOperationsSnapshot());
+      const snapshot = await getOperationsSnapshot();
+      const campaign = scriptProcesses?.get('messages'), attendance = scriptProcesses?.get('whatsapp');
+      // Historical telemetry survives a restart; only the live manager can
+      // establish whether a campaign is currently running.
+      const executing = status => ['starting', 'running'].includes(status);
+      sendJson(response, 200, { ...snapshot, messages: { ...snapshot.messages,
+        executionActive: executing(campaign?.status) && executing(attendance?.status),
+        connectionStatus: attendance?.connection || 'disconnected',
+      } });
       return;
     }
 
